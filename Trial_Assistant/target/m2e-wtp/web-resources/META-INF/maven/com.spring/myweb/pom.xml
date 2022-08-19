@@ -58,16 +58,16 @@
 		<!-- Log4Jdbc Log4j2 JDBC 4 1 » 1.16 -->
 		<!-- DB log 출력  -->
 		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4.1 -->
-<!-- 		 <dependency>
+		 <dependency>
 		    <groupId>org.bgee.log4jdbc-log4j2</groupId>
 		    <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
 		    <version>1.16</version>
-		</dependency>  -->
+		</dependency>
 				
 		
 
 		<!-- Logging -->
-<!-- 		<dependency>
+		<!-- <dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${org.slf4j-version}</version>
@@ -252,7 +252,7 @@
 		
 		<!-- 클라우드 DB -->
 		<!-- 윈도우용 디펜더시 세게 추가하기 -->
-		<!-- <dependency>
+		 <dependency>
     		<groupId>com.oracle.database.jdbc</groupId>
     		<artifactId>ojdbc8</artifactId>
     		<version>21.5.0.0</version>
@@ -274,7 +274,7 @@
     		<groupId>com.oracle.database.security</groupId>
     		<artifactId>osdt_core</artifactId>
     		<version>21.5.0.0</version>
-		</dependency> -->
+		</dependency>
 		<!-- 클라우드 DB -->
 		<!-- 
 			참고 사이트 주소
@@ -286,35 +286,35 @@
 		<!-- Start 맥북에서 jdbc를 사용하기 위한 라이브러리  -->
 		<!-- ojdbc8 -->
 		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 -->
-		 <dependency>
+		 <!-- <dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
 			<version>19.10.0.0</version>
-		</dependency> 
+		</dependency> --> 
 
 		<!-- oraclepki -->
 		<!-- https://mvnrepository.com/artifact/com.oracle.database.security/oraclepki -->
-		  <dependency>
+		  <!-- <dependency>
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>oraclepki</artifactId>
 			<version>19.10.0.0</version>
-		</dependency> 
+		</dependency> -->
  		
 		<!-- osdt_cert -->
 		<!-- https://mvnrepository.com/artifact/com.oracle.database.security/osdt_cert -->
-		  <dependency>
+		  <!-- <dependency>
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>osdt_cert</artifactId>
 			<version>19.10.0.0</version>
-		</dependency>
+		</dependency> -->
 
 		 <!-- osdt_core -->
 		<!-- https://mvnrepository.com/artifact/com.oracle.database.security/osdt_core -->
-		  <dependency>
+		  <!-- <dependency>
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>osdt_core</artifactId>
 			<version>19.10.0.0</version>
-		</dependency>
+		</dependency> -->
 		<!-- End 맥북에서 jdbc를 사용하기 위한 라이브러리  -->
 
 
