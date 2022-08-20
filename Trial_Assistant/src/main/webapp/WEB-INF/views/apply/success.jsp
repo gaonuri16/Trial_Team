@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +52,7 @@
         margin: 70px auto;
     }
 
-    #infor-btn {
+    #nextBtn {
         color: white;
     }
 
@@ -143,9 +145,9 @@
                                 
                     
                             </div>
-
+                            
                             <div class="titlefoot col mt-2">
-                                <button type="submit" class="btn btn-secondary btn-lg px-3" id="infor-btn">메인 메뉴로 가기</button>
+                                <button type="button" class="btn btn-secondary btn-lg px-3" id="nextBtn" onclick="location.href='<c:url value="/" />'">메인 메뉴로 가기</button>
                             </div>
 
                                 

@@ -31,7 +31,7 @@ public class GhController {
 	public void ghRegist() {}
 	
 	//글 등록 처리
-	@PostMapping("/registForm")
+	@PostMapping("/ghRegistForm")
 	public String registForm(GhVO gh, @RequestParam("file") List<MultipartFile> fileList, RedirectAttributes ra) {
 		// 여러 파일이 controller로 들어오기 때문에 MultipartHttpServletRequest 인터페이스를 통해 
 		// 가져올 수 있음 
@@ -43,7 +43,7 @@ public class GhController {
 				
 				
 		// 서버에서 파일을 저장할 경로 
-		String uploadPath = "C:\\Users\\user\\Desktop\\test"+filelocation;
+		String uploadPath = "C:\\Users\\ahndasol\\Desktop"+filelocation;
 				
 		File folder = new File(uploadPath);
 			if(!folder.exists()) {
@@ -83,6 +83,8 @@ public class GhController {
 			// 위에서 지정한 경로로 값을 보냄
 						
 			gh.setGhAcadBackFile(uploadPath + "\\" + fileName);
+			gh.setGhAcadBackFile(fileRealName);
+			gh.setGhCarrerFile(uploadPath + "\\" + fileName); 
 			gh.setGhCarrerFile(fileRealName);
 			service.regist(gh);
 		}

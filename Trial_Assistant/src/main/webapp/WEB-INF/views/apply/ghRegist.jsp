@@ -116,7 +116,7 @@
                     </div>
                 </section>
 
-                    <form class="col-md-9 m-auto" action="<c:url value='/apply/registForm' />" name="registForm" method="post" enctype="multipart/form-data">
+                    <form class="col-md-9 m-auto" action="<c:url value='/apply/ghRegistForm' />" name="ghRegistForm" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputname">이름</label>
@@ -318,7 +318,7 @@
 
                             <div class="titlefoot col mt-2">
                                 <button type="submit" class="btn btn-secondary btn-lg px-3 gh-btn" id="prevBtn">이전</button>
-                                <button type="button" class="btn btn-secondary btn-lg px-3 gh-btn" id="nextBtn" >다음</button>
+                                <button type="button" class="btn btn-secondary btn-lg px-3 gh-btn" id="nextBtn">다음</button>
                             </div>
 
                                 
