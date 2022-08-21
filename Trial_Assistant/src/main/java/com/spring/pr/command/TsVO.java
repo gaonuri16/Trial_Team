@@ -47,25 +47,29 @@ public class TsVO {
 		    NOCACHE;
 	*/
 	private int tsNum;
-	private String tsName;
-	private String tsSocNum;
-	private String tsHomeNum;
-	private String tsAcadBack;
-	private String tsAcadBackFile;
-	private String tsCarrer;
-	private String tsCarrerFile;
-	private String tsEmail;
-	private String tsPhoneNum;
-	private String tsBank;
-	private String tsAccHol;
-	private String tsBankNum;
-	private String tsPostNum;
-	private String tsAddr;
-	private String tsDtlAddr;
-	private String tsExprt;
-	private String tsLngg;
-	private String tsDsgCrt;
-	private String tsActiveArea;
+	private String tsName; //이름
+	private String tsSocNum; //주민등록번호
+	private String tsHomeNum; //집 전화번호
+	private String tsPhoneNum; // 휴대폰 번호
+	private String tsJob; // 직업
+	private String tsEmail; // 이메일
+	private String tsExprt; // 전문 분야
+	private String tsLngg; // 언어
+	private String tsDsgCrt; // 지정 법원
+	private String tsActiveArea; //활동 지역
+	private String tsAcadBack; // 학력
+	private String tsAcadBackFile; // 학력 파일
+	private String tsAcadBackFileReal;
+	private String tsCarrer; // 경력
+	private String tsCarrerFile; //경력 파일
+	private String tsCarrerFileReal;
+	private String tsBank; //은행
+	private String tsAccHol; //예금주
+	private String tsBankNum; //계좌번호
+	private String tsPostNum; //우편번호
+	private String tsAddr; //주소
+	private String tsDtlAddr; //상세 주소
+	
 	private int appNumSeq;
 	private String joinId;
 	

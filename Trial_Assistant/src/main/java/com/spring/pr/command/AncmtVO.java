@@ -43,16 +43,22 @@ public class AncmtVO {
 	//공고 년도 조력자구분
 	
 	private int AnmNum;   //공고번호
-	private Timestamp AnmUploadDate;   //공고작성일
+	private String AnmYear; //년도
+	private String AnmDegree;   //공고 차수
 	private String AnmTitle;   //공고제목
+	private Timestamp AnmStart; //공고시작
+	private Timestamp AnmEnd;   //공고마감
+	private String AnmDivision; //조력자 구분
+	
+	private Timestamp AnmUploadDate;   //공고작성일
 	private String AnmContent;   //공고내용
 	private String AnmFileLoca;   //공고 파일 주소
 	private int AnmViewCnt;   //공고 조회수
 	private String ManagerId;   //작성자 아이
-	private String AnmDegree;   //공고 차수
-	private Timestamp AnmStart; //공고시작
-	private Timestamp AnmEnd;   //공고마감
-	private String AnmDivision; //조력자 구분
-	private String AnmYear; //년도
+	
+	
+	
+	
+	
 	
 }

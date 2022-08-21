@@ -9,33 +9,44 @@
 
 <resultMap type="com.spring.pr.command.TsVO" id="TsMap">
 		<!-- 기본키는 id 태그를 사용하고 나머지는 result 태그를 사용 -->
+		
 		<id property="tsNum" column="TS_NUM_SEQ"/>
 		
 		<result property="tsName" column="TS_NAME"/>
 		<result property="tsSocNum" column="TS_SOC_NUM"/>
 		<result property="tsHomeNum" column="TS_HOME_NUM"/>
+		<result property="tsPhoneNum" column="TS_PHONE_NUM"/>		
+		<result property="tsJob" column="TS_JOB"/>
+		<result property="tsEmail" column="TS_EMAIL"/>
+		
+		<result property="tsExprt" column="TS_EXPRT"/>
+		<result property="tsLngg" column="TS_LNGG"/>
+		<result property="tsDsgCrt" column="TS_DSG_CRT"/>
+		<result property="tsActiveArea" column="TS_ACTIVE_AREA"/>
+		
 		<result property="tsAcadBack" column="TS_ACAD_BACK"/>
-		<result property="tsAcadBack" column="TS_ACAD_BACK_FILE" />
+		<result property="tsAcadBackFile" column="TS_ACAD_BACK_FILE" />
+		<result property="tsAcadBackFileReal" column="TS_ACAD_BACK_FILE_REAL" />
 		<result property="tsCarrer" column="TS_CARRER"/>
 		<result property="tsCarrerFile" column="TS_CARRER_FILE"/>
-		<result property="tsEmail" column="TS_EMAIL"/>
-		<result property="tsPhoneNum" column="TS_PHONE_NUM"/>
+		<result property="tsCarrerFileReal" column="TS_CARRER_FILE_REAL"/>
+		
 		<result property="tsBank" column="TS_BANK"/>
 		<result property="tsAccHol" column="TS_ACC_HOL"/>
 		<result property="tsBankNum" column="TS_BANK_NUM"/>
-		<result property="tsPostNum" column="TS_POST_NUM"/>
-		<result property="tsActiveArea" column="TS_ACTIVE_AREA"/>
-		<result property="tsDsgCrt" column="TS_Dsg_Crt"/>
-		<result property="tsLngg" column="TS_LNGG"/>
+		
+		<result property="tsPostNum" column="TS_POST_NUM"/>	
 		<result property="tsAddr" column="TS_ADDR"/>
 		<result property="tsDtlAddr" column="TS_DTL_ADDR"/>
+		
 		<result property="appNumSeq" column="APP_NUM_SEQ"/>
 		<result property="joinId" column="JOINID"/>	
 	</resultMap>
 	
 	<insert id="regist">
-		INSERT INTO TS(TS_NUM_SEQ, TS_NAME, TS_SOC_NUM, TS_HOME_NUM, TS_ACAD_BACK, TS_ACAD_BACK_FILE, TS_CARRER, TS_CARRER_FILE, TS_EMAIL, TS_PHONE_NUM, TS_BANK, TS_ACC_HOL, TS_BANK_NUM, TS_POST_NUM, TS_ADDR, TS_DTL_ADDR, TS_EXPRT, TS_LNGG, TS_DSG_CRT, TS_ACTIVE_AREA) 
-		VALUES(TS_NUM_SEQ_NAME.NEXTVAL, #{tsName}, #{tsSocNum},  #{tsHomeNum}, #{tsAcadBack}, #{tsAcadBackFile}, #{tsCarrer}, #{tsCarrerFile}, #{tsEmail}, #{tsPhoneNum}, #{tsBank}, #{tsAccHol}, #{tsBankNum}, #{tsPostNum}, #{tsAddr}, #{tsDtlAddr}, #{tsExprt}, #{tsLngg}, #{tsDsgCrt}, #{tsActiveArea})
+		INSERT INTO TS(TS_NUM_SEQ, TS_NAME, TS_SOC_NUM, TS_HOME_NUM, TS_PHONE_NUM, TS_JOB, TS_EMAIL, TS_EXPRT, TS_LNGG, TS_DSG_CRT, TS_ACTIVE_AREA, TS_ACAD_BACK, TS_ACAD_BACK_FILE, TS_ACAD_BACK_FILE_REAL, TS_CARRER, TS_CARRER_FILE, TS_CARRER_FILE_REAL, TS_BANK, TS_ACC_HOL, TS_BANK_NUM, TS_POST_NUM, TS_ADDR, TS_DTL_ADDR)
+		VALUES(TS_NUM_SEQ_NAME.NEXTVAL, #{tsName}, #{tsSocNum}, #{tsHomeNum}, #{tsPhoneNum}, #{tsJob}, #{tsEmail}, #{tsExprt}, #{tsLngg}, #{tsDsgCrt}, #{tsActiveArea}, #{tsAcadBack}, #{tsAcadBackFile}, #{tsAcadBackFileReal}, #{tsCarrer}, #{tsCarrerFile}, #{tsCarrerFileReal}, #{tsBank}, #{tsAccHol}, #{tsBankNum}, #{tsPostNum}, #{tsAddr}, #{tsDtlAddr})
+		
 	</insert>
 	
 	

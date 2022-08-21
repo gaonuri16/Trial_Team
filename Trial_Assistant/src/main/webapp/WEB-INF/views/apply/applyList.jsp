@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,12 +95,23 @@
                     </section>
                 </div>
 
+      <form class="form-total">
+        <div class="container py-5">
+            <div class="row">
+                <div class="container-fluid py-3">
+                    <section class="container py-5">
+                        <div>
+                            <h1 id="apply-benner">조력자 신청하기</h1><hr width="1250">
+                        </div>
+                    </section>
+                </div>
+
                 <!-- 공고 테이블 -->
                 <div class="container-fluid" id="applyList">
                     <div class="content-row">
                         <!--lg에서 9그리드, xs에서 전체그리드-->   
                         <div class="col-lg-9 col-xs-12 board-table">
-                            <div class="titlebox"></div>
+                            <div class="titlebox">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr align="center">
@@ -113,139 +126,81 @@
                                     </thead>
 
                                     <tbody>
-                                        <tr align="center">
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>1</p>
-                                            </td>
-
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>2022</p>
-                                            </td>
-
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>2차</p>
-                                            </td>
-            
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>통번역인 조력자 선발</p>
-                                            </td>
-            
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>2022-03-15 ~ 2022-09-02</p>
-                                            </td>
-            
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>통번역인</p>
-                                            </td>
-            
-                                            <td>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col text-center">
-                                                            <button class="btn btn-success">신청하기</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-            
-                                            <tr align="center">
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>2</p>
-                                                </td>
-
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>2022</p>
-                                                </td>
-
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>2차</p>
-                                                </td>
-                
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>일반 조력자 선발</p>
-                                                </td>
-                
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>2022-03-15 ~ 2022-09-02</p>
-                                                </td>
-                
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>일반 조력자</p>
-                                                </td>
-                
-                                                <td>
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col text-center">
-                                                                <button class="btn btn-success">신청하기</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-            
-                                                <tr align="center">
-                                                    <td>
-                                                         &nbsp;&nbsp;&nbsp;
-                                                        <p>3</p>
-                                                    </td>
-
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>2022</p>
-                                                    </td>
-
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>2차</p>
-                                                    </td>
-                    
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>기관 추천 조력자 선발</p>
-                                                    </td>
-                    
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>2022-03-15 ~ 2022-09-02</p>
-                                                    </td>
-                    
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>기관 추천 조력자</p>
-                                                    </td>
-                    
-                                                    <td>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="col text-center">
-                                                                    <button class="btn btn-success">신청하기</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tr>
-                                        </tr>
+                                      <c:forEach var="vo" items="${anmList}">
+	                                        <tr align="center">
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmNum}</p>
+	                                            </td>
+	
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmYear}</p>
+	                                            </td>
+	
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmDegree}</p>
+	                                            </td>
+	            
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmTitle}</p>
+	                                            </td>
+	            
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmStart} ~ ${vo.anmEnd}</p>
+	                                            </td>
+	            
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmDivision}</p>
+	                                            </td>
+	            
+	                                            <td>
+	                                                <div class="container">
+	                                                    <div class="row">
+	                                                        <div class="col text-center">
+	                                                            <button class="btn btn-success">신청하기</button>
+	                                                        </div>
+	                                                    </div>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+                                      </c:forEach>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form> 
+                                
+								<form action="<c:url value='/apply/applyList' />" name="pageForm">
+						            <div class="text-center">
+						                <hr>
+						                <ul id="pagination" class="pagination pagination-sm">
+						                    <c:if test="${pc.prev}">
+						                        <li><a href="#" data-pagenum="${pc.beginPage-1}">이전</a></li>
+						                    </c:if>
+						                        
+						                    <c:forEach var="num" begin="${pc.beginPage}" end="${pc.endPage}">
+						                        <li class="${pc.paging.pageNum == num ? 'active' : ''}"><a href="#" data-pagenum="${num}">${num}</a></li>
+						                    </c:forEach>
+						                        
+						                    <c:if test="${pc.next}">
+						                        <li><a href="#" data-pagenum="${pc.endPage+1}">다음</a></li>
+						                    </c:if>
+						                </ul>                     
+						                    <!-- 페이지 관련 버튼(이전, 다음, 페이지번호)을 클릭 시 같이 숨겨서 보내줄 공통 값  -->
+						                    <input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
+						                    <input type="hidden" name="cpp" value="${pc.paging.cpp}">
+                                    </div>                       
+								</form>
+		                    </div>
+		                </div>     
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</form>
+ 
         
         <!-- Start Brands -->
         <section class="py-5">
@@ -254,8 +209,43 @@
             </div>
         </section>
         <!--End Brands-->
-        
+
         <%@ include file="../include/footer1.jsp"%>
 
 </body>
 </html>
+
+
+
+
+<script>
+		$(function() {
+			
+			const msg = '${msg}';
+			if(msg !== '') {
+				alert(msg);
+			}
+
+			//사용자가 페이지 관련 버튼을 클릭했을 때, 기존에는 각각의 a태그의 href에다가
+			//각각 다른 url을 작성해서 요청을 보내줬다면, 이번에는 클릭한 그 버튼이 무엇인지를 확인해서
+			//그 버튼에 맞는 페이지 정보를 자바스크립트로 끌고와서 요청을 보내 주겠습니다.
+			$('#pagination').on('click', 'a', function(e) {
+				e.preventDefault(); //a태그의 고유기능 중지.
+				
+				//현재 이벤트가 발생한 요소(버튼)의
+				//data-pageNum의 값을 얻어서 변수에 저장.
+				//const value = e.target.dataset.pagenum; -> Vanilla JS 
+				const value = $(this).data('pagenum'); // -> jQuery
+				console.log(value);
+				
+				//페이지 버튼들을 감싸고 있는 form태그를 name으로 지목하여
+				//그 안에 숨겨져 있는 pageNum이라는 input태그의 value에
+				//위에서 얻은 data-pageNum의 값을 삽입 한 후 submit
+				document.pageForm.pageNum.value = value;
+				document.pageForm.submit();
+				
+			});
+			
+			
+		}); //end jQuery
+	</script>

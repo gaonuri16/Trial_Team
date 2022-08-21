@@ -39,11 +39,11 @@ public class GhController {
 		// 날짜별로 폴더 생성해서 파일 관리
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		Date date = new Date();
-		String filelocation = sdf.format(date);
+		String fileloca = sdf.format(date);
 				
 				
 		// 서버에서 파일을 저장할 경로 
-		String uploadPath = "C:\\Users\\ahndasol\\Desktop"+filelocation;
+		String uploadPath = "C:\\Users\\ahndasol\\Desktop\\test" + fileloca;
 				
 		File folder = new File(uploadPath);
 			if(!folder.exists()) {
@@ -74,6 +74,7 @@ public class GhController {
 
 			System.out.println("파일 이름 : " + fileName);
 			System.out.println("파일 크기 : " + size);
+			System.out.println("폴더명: " + fileloca);
 
 			File saveFile = new File(uploadPath + "\\" + fileName);
 			// File객체를 사용해서 경로 지정 
@@ -82,10 +83,10 @@ public class GhController {
 			file.transferTo(saveFile);
 			// 위에서 지정한 경로로 값을 보냄
 						
-			gh.setGhAcadBackFile(uploadPath + "\\" + fileName);
-			gh.setGhAcadBackFile(fileRealName);
-			gh.setGhCarrerFile(uploadPath + "\\" + fileName); 
-			gh.setGhCarrerFile(fileRealName);
+			gh.setGhAcadBackFile(fileName);
+			gh.setGhAcadBackFileReal(fileRealName);
+			gh.setGhCarrerFile(fileName);
+			gh.setGhCarrerFileReal(fileRealName);
 			service.regist(gh);
 		}
 		// 반복문을 활용하여 값을 넣을 수 있음 

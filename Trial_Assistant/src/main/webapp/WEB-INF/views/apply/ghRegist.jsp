@@ -225,7 +225,7 @@
                         <div class="mb-3">
                             <label for="inputacaback">학력</label><span id="">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
                             <textarea class="form-control mt-1" id="aca-back" name="ghAcadBack" rows="10"></textarea>
-                            <input type="file" multiple="multiple" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file">
+                            <input type="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file">
 
                             <br>
                             <br>
@@ -233,7 +233,7 @@
                             <div class="mb-3">
                                 <label for="inputcarrer">경력</label><span id="">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
                                 <textarea class="form-control mt-1" id="carrer" name="ghCarrer" rows="10"></textarea>
-                               <input type="file" multiple="multiple" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file">
+                               <input type="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file">
                             </div>
                         </div>
 
@@ -317,8 +317,8 @@
                             </div>
 
                             <div class="titlefoot col mt-2">
-                                <button type="submit" class="btn btn-secondary btn-lg px-3 gh-btn" id="prevBtn">이전</button>
-                                <button type="button" class="btn btn-secondary btn-lg px-3 gh-btn" id="nextBtn">다음</button>
+                                <button type="button" class="btn btn-secondary btn-lg px-3 gh-btn" id="ghPrevBtn">이전</button>
+                                <button type="button" class="btn btn-secondary btn-lg px-3 gh-btn" id="ghNextBtn">다음</button>
                             </div>
 
                                 
@@ -345,7 +345,7 @@
 <script>
 
     	$(function() {
-			$('#nextBtn').click(function() {
+			$('#ghNextBtn').click(function() {
 				if($('input[name=ghName]').val() === '') {
 					alert('이름은 필수 항목입니다.');
 					$('input[name=ghName]').focus();
@@ -420,7 +420,7 @@
 					return;
 				
 				} else {
-					document.registForm.submit();
+					document.ghRegistForm.submit();
 				}
 			});
 			

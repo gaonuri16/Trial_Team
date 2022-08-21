@@ -11,6 +11,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.spring.pr.apply.mapper.IApplyMapper;
 import com.spring.pr.command.AncmtVO;
+import com.spring.pr.util.PageVO;
 
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,21 +23,24 @@ public class ApplyMapperTest {
 	
 	@Test
 	public void getListTest() {
-		System.out.println(mapper.getList());
+		PageVO vo = new PageVO();
+		System.out.println(mapper.getList(vo));
 	}
-	
+		
 	@Test
 	public void registTest() {
-		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		AncmtVO ancmt = new AncmtVO();
-		ancmt.setAnmNum(2);
-        ancmt.setAnmTitle("1번째 제목입니다.");
-        ancmt.setAnmDegree("1차");
-        ancmt.setAnmStart(timestamp);
-        ancmt.setAnmEnd(timestamp);
-        ancmt.setAnmYear("2022년");
-        ancmt.setAnmDivision("기관추천조력자");
-		mapper.regist(ancmt);
+			for(int i=1; i<=20; i++) {
+			Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+			AncmtVO ancmt = new AncmtVO();
+			ancmt.setAnmNum(1);
+	        ancmt.setAnmTitle("1번째 제목입니다.");
+	        ancmt.setAnmDegree("1차");
+	        ancmt.setAnmStart(timestamp);
+	        ancmt.setAnmEnd(timestamp);
+	        ancmt.setAnmYear("2022년");
+	        ancmt.setAnmDivision("기관추천조력자");
+			mapper.regist(ancmt);
+		}
 	}
 	
 	//위에서 회원 가입한 아이디로 중복 확인을 해서

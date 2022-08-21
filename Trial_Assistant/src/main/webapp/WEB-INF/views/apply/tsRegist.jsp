@@ -163,12 +163,12 @@
 		                        <div class="row">
 		                            <div class="form-group col-md-6 mb-3">
 		                                <label for="inputhelyear">전문 분야</label>
-		                                <input type="text" class="form-control mt-1" id="hel-year" name="tsYear">
+		                                <input type="text" class="form-control mt-1" id="hel-year" name="tsExprt">
 		                                <span id="trans-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
 		                            </div>
 		                            <div class="form-group col-md-6 mb-3">
 		                                <label for="inputhel-srttn">언어</label>
-		                                <input type="text" class="form-control mt-1" id="hel-srttn" name="tsSrttn">
+		                                <input type="text" class="form-control mt-1" id="hel-srttn" name="tsLngg">
 		                                <span id="trans-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
 		                            </div>
 		                        </div>
@@ -178,12 +178,12 @@
 		                        <div class="row">
 		                            <div class="form-group col-md-6 mb-3">
 		                                <label for="inputbsnsnum">지정 법원</label>
-		                                <input type="text" class="form-control mt-1" id="bsns-num" name="tsBsnsNum">
+		                                <input type="text" class="form-control mt-1" id="bsns-num" name="tsDsgCrt">
 		                                <span id="trans-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
 		                            </div>
 		                            <div class="form-group col-md-6 mb-3">
 		                                <label for="inputfax">활동 가능 지역</label>
-		                                <input type="text" class="form-control mt-1" id="fax" name="tsFax">
+		                                <input type="text" class="form-control mt-1" id="fax" name="tsActiveArea">
 		                                <span id="trans-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
 		                            </div>
 		                        </div>
@@ -283,7 +283,7 @@
 		
 		                <div class="titlefoot col mt-2">
 		                    <button type="button" class="btn btn-secondary btn-lg px-3" id="prevBtn">이전</button>
-		                    <button type="button" class="btn btn-secondary btn-lg px-3" id="nextBtn">다음</button>
+		                    <button type="button" class="btn btn-secondary btn-lg px-3" id="tsNextBtn">다음</button>
 		                </div>
 		
 		                    </div>
@@ -297,7 +297,7 @@
 		    
 		    	<%@ include file="../include/footer1.jsp"%>
     
-    </body>
+  </body>
 </html>
     
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -305,7 +305,7 @@
 <script>
 
     	$(function() {
-			$('#nextBtn').click(function() {
+			$('#tsNextBtn').click(function() {
 				if($('input[name=ghName]').val() === '') {
 					alert('이름은 필수 항목입니다.');
 					$('input[name=ghName]').focus();
@@ -380,7 +380,7 @@
 					return;
 				
 				} else {
-					document.registForm.submit();
+					document.tsRegistForm.submit();
 				}
 			});
 			

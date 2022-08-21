@@ -42,7 +42,7 @@ public class TsController {
 					
 					
 	// 서버에서 파일을 저장할 경로 
-	String uploadPath = "C:\\Users\\ahndasol\\Desktop"+filelocation;
+	String uploadPath = "C:\\Users\\ahndasol\\Desktop\\test"+filelocation;
 					
 	File folder = new File(uploadPath);
 		if(!folder.exists()) {
@@ -81,10 +81,10 @@ public class TsController {
 			file.transferTo(saveFile);
 			// 위에서 지정한 경로로 값을 보냄
 							
-			ts.setTsAcadBackFile(uploadPath + "\\" + fileName);
-			ts.setTsAcadBackFile(fileRealName);
-			ts.setTsCarrerFile(uploadPath + "\\" + fileName); 
-			ts.setTsCarrerFile(fileRealName);
+			ts.setTsAcadBackFile(fileName);
+			ts.setTsAcadBackFileReal(fileRealName);
+			ts.setTsCarrerFile(fileName); 
+			ts.setTsCarrerFileReal(fileRealName);
 			service.regist(ts);
 		}
 			// 반복문을 활용하여 값을 넣을 수 있음 

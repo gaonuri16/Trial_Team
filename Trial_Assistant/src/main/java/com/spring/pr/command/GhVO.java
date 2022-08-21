@@ -62,8 +62,10 @@ public class GhVO {
 	private String ghHomeNum;
 	private String ghAcadBack;
 	private String ghAcadBackFile;
+	private String ghAcadBackFileReal;
 	private String ghCarrer;
 	private String ghCarrerFile;
+	private String ghCarrerFileReal;
 	private String ghEmail;
 	private String ghPhoneNum;
 	private String ghBank;

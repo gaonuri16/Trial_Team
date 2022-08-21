@@ -30,9 +30,33 @@
       VALUES(ANM_NO_SEQ_NAME.NEXTVAL, #{AnmTitle}, #{AnmDegree}, #{AnmStart}, #{AnmEnd}, #{AnmYear}, #{AnmDivision})
    </insert>
 	
-	<select id="getList" resultMap="AncmtMap">	
-	SELECT ANM_NO_SEQ, ANM_YEAR, ANM_DEGREE, ANM_TITLE, ANM_START, ANM_END, ANM_DIVISION
-	FROM ANNOUNCEMENT
+	<select id ="getList" resultMap="AncmtMap">
+		
+		SELECT * FROM
+			(
+			SELECT ROWNUM AS rn, tbl.*FROM
+				(
+				SELECT 
+					ANM_NO_SEQ,
+					ANM_YEAR,
+					ANM_DEGREE, 
+					ANM_TITLE, ANM_START, 
+					ANM_END, ANM_DIVISION
+					FROM Announcement
+					ORDER BY ANM_NO_SEQ DESC
+				)tbl
+			)
+		<![CDATA[
+	      WHERE rn > (#{pageNum}-1) * #{cpp}
+	      AND rn <= #{pageNum} * #{cpp}
+     	]]>
+		
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		SELECT COUNT(*)
+		FROM Announcement
+		<include refid="search" />
 	</select>
 	
 	<select id="idCheck" resultType="int">
