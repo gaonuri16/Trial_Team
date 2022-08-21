@@ -162,7 +162,7 @@
                     <div class="content-row">
                         <!--lg에서 9그리드, xs에서 전체그리드-->   
                         <div class="col-lg-9 col-xs-12 board-table">
-                            <div class="titlebox"></div>
+                            <div class="titlebox">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr align="center">
@@ -177,139 +177,80 @@
                                     </thead>
 
                                     <tbody>
-                                        <tr align="center">
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>1</p>
-                                            </td>
-
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>2022</p>
-                                            </td>
-
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>2차</p>
-                                            </td>
-            
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>통번역인 조력자 선발</p>
-                                            </td>
-            
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>2022-03-15 ~ 2022-09-02</p>
-                                            </td>
-            
-                                            <td>
-                                                &nbsp;&nbsp;&nbsp;
-                                                <p>통번역인</p>
-                                            </td>
-            
-                                            <td>
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <div class="col text-center">
-                                                            <button class="btn btn-success">신청하기</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-            
-                                            <tr align="center">
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>2</p>
-                                                </td>
-
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>2022</p>
-                                                </td>
-
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>2차</p>
-                                                </td>
-                
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>일반 조력자 선발</p>
-                                                </td>
-                
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>2022-03-15 ~ 2022-09-02</p>
-                                                </td>
-                
-                                                <td>
-                                                    &nbsp;&nbsp;&nbsp;
-                                                    <p>일반 조력자</p>
-                                                </td>
-                
-                                                <td>
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="col text-center">
-                                                                <button class="btn btn-success">신청하기</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-            
-                                                <tr align="center">
-                                                    <td>
-                                                         &nbsp;&nbsp;&nbsp;
-                                                        <p>3</p>
-                                                    </td>
-
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>2022</p>
-                                                    </td>
-
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>2차</p>
-                                                    </td>
-                    
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>기관 추천 조력자 선발</p>
-                                                    </td>
-                    
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>2022-03-15 ~ 2022-09-02</p>
-                                                    </td>
-                    
-                                                    <td>
-                                                        &nbsp;&nbsp;&nbsp;
-                                                        <p>기관 추천 조력자</p>
-                                                    </td>
-                    
-                                                    <td>
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                <div class="col text-center">
-                                                                    <button class="btn btn-success">신청하기</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tr>
-                                        </tr>
+                                      <c:forEach var="vo" items="${anmList}">
+	                                        <tr align="center">
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmNum}</p>
+	                                            </td>
+	
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmYear}</p>
+	                                            </td>
+	
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmDegree}</p>
+	                                            </td>
+	            
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmTitle}</p>
+	                                            </td>
+	            
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmStart} ~ ${vo.anmEnd}</p>
+	                                            </td>
+	            
+	                                            <td>
+	                                                &nbsp;&nbsp;&nbsp;
+	                                                <p>${vo.anmDivision}</p>
+	                                            </td>
+	            
+	                                            <td>
+	                                                <div class="container">
+	                                                    <div class="row">
+	                                                        <div class="col text-center">
+	                                                            <button class="btn btn-success">신청하기</button>
+	                                                        </div>
+	                                                    </div>
+	                                                </div>
+	                                            </td>
+	                                        </tr>
+                                      </c:forEach>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
+                                
+								<form action="<c:url value='/apply/applyList' />" name="pageForm">
+						            <div class="text-center">
+						                <hr>
+						                <ul id="pagination" class="pagination pagination-sm">
+						                    <c:if test="${pc.prev}">
+						                        <li><a href="#" data-pagenum="${pc.beginPage-1}">이전</a></li>
+						                    </c:if>
+						                        
+						                    <c:forEach var="num" begin="${pc.beginPage}" end="${pc.endPage}">
+						                        <li class="${pc.paging.pageNum == num ? 'active' : ''}"><a href="#" data-pagenum="${num}">${num}</a></li>
+						                    </c:forEach>
+						                        
+						                    <c:if test="${pc.next}">
+						                        <li><a href="#" data-pagenum="${pc.endPage+1}">다음</a></li>
+						                    </c:if>
+						                </ul>                     
+						                    <!-- 페이지 관련 버튼(이전, 다음, 페이지번호)을 클릭 시 같이 숨겨서 보내줄 공통 값  -->
+						                    <input type="hidden" name="pageNum" value="${pc.paging.pageNum}">
+						                    <input type="hidden" name="cpp" value="${pc.paging.cpp}">
+                                    </div>                       
+								</form>
+		                    </div>
+		                </div>     
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</form>
         <!-- Start Brands -->
         <section class="py-5">
             <div class="container my-4">
