@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,7 +53,7 @@
             margin: 70px auto;
         }
 
-        #info-btn {
+        #person-btn {
             color: white;
         }
 
@@ -103,19 +105,20 @@
 <!-- Start Content -->
         <div class="container py-5">
             <div class="row">
+            	<div class="container-fluid py-3">
+                  <div class="col-md-7">
+                  	<h1>개인정보 수집 및 이용 약관 동의</h1>
+                  	<hr width="1250">
+                </div>
 
-
-                <div class="container-fluid py-3">
-                    <div class="col-md-7">
-                        <h1>개인정보 수집 및 이용 약관 동의</h1><hr width="1250">
-                    </div>
-                <form>
+				<form class="col-md-9 m-auto" action="<c:url value='/apply/personInfoForm' />" name="personInfoForm" method="post"> <!-- 포스트로 요청 받을 때에는 action -->
+                
                     <section class="py-5 px-3">
                         <div class="form-group">
                             <label for="content"></label>
                             <textarea id="info-text" class="form-control" rows="10" placeholder="이용약관 동의"></textarea>
                             <div class="info-ag">
-                                이용약관 동의<span class="info-essen">(필수) </span><input type="checkbox" class="info-check">
+                                이용약관 동의<span class="info-essen">(필수) </span><input type="checkbox" class="info-check" name="termsUse">
                             </div>
                         </div>
 
@@ -126,7 +129,7 @@
                             <label for="content"></label>
                             <textarea id="info-text" class="form-control" rows="10" placeholder="개인정보 수집 및 이용 동의"></textarea>
                             <div class="info-ag">
-                                개인정보 수집 및 이용 동의<span class="info-essen">(필수) </span><input type="checkbox" class="info-check">
+                                개인정보 수집 및 이용 동의<span class="info-essen">(필수) </span><input type="checkbox" class="info-check" name="personInfo">
                             </div>
                         </div>
 
@@ -149,10 +152,14 @@
                                 </div>
     
                                 <div class="titlefoot col mt-2">
-                                    <button type="submit" class="btn btn-secondary btn-lg px-3" id="infor-btn">이전</button>
-                                    <button type="button" class="btn btn-secondary btn-lg px-3" id="infor-btn">다음</button>
+                                    <button type="button" class="btn btn-secondary btn-lg px-3 person-btn" id="prevBtn">이전</button>
+                                    <button type="button" class="btn btn-secondary btn-lg px-3 person-btn" id="nextBtn">다음</button>
                                 </div>
-    
+                                
+                                
+                                <%-- onclick="location.href='<c:url value="/apply/identification" />'" --%>
+   
+ 
                                     
                                 </div>
     
@@ -168,4 +175,36 @@
         <%@ include file="../include/footer1.jsp"%>
 
 </body>
+
+<script> 
+		$(function() { 
+			$('#nextBtn').click(function() {
+				if($('input[name=termsUse]:checked').length < 1) {
+					alert('이용약관 동의는 필수 항목입니다.');
+					return;
+					
+				} else if($("input[name=personInfo]:checked").length < 1) {
+					alert("개인정보 수집 및 이용 동의는 필수 항목입니다.");
+					
+				} else {
+					document.personInfoForm.submit();
+				}
+			});
+			
+			/* $('#nextBtn').click(function() {
+				if(confirm('등록 하시겠습니까?')) {
+					location.href='<c:url value="/apply/success" />'
+				} else return;
+			}) */
+
+		});
+
+</script>
+
+
+
+
+
+
+
 </html>

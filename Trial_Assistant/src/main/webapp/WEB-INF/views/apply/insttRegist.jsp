@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,18 +87,17 @@
 <jsp:include page="../include/header.jsp" />
 
 <!-- Start Content -->
-<form class="form-total">
     <div class="container py-5">
         <div class="row">
             <div class="container-fluid py-3">
                 <section class="container py-5">
                     <div>
-                        <h1>기관추천조력자 추가 신청</h1><hr width="1250">
+                        <h1>기관 추천 조력자 신청</h1><hr width="1250">
                     </div>
                 </section>
             </div>
 
-            <form class="col-md-5 m-auto" method="post" role="form" id="instt-info">
+            <form name="insttRegistForm" method="post" onsubmit="return _onSubmit();" action="<c:url value='apply/insttRegistForm'/>" enctype="multipart/form-data" class="col-md-5 m-auto">
                 <div class="mb-3">
                     <label for="inputbnsnnum">사업자 번호</label>
                         <div class="input-group">
@@ -109,10 +110,25 @@
                         <br>
                         <br>
 
-                   	 신청서 업로드하기    
-                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                </div>
+	                    신청서 업로드하기
+ 	                    <!-- <input type="file" name="file" id="file" accept=".xlsx, .xls"/> -->
+	                    <input type="file" id="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file" accept=".xlsx, .xls" >
+	                    
+	                    <p></p>
+	            
+	                    
+	                    <div class="pull-right">
+				            <input type="submit" value="엑셀파일 업로드" class="btn btn btn-success" />
+				            <a href="${path}/document/applicant_excelUpload_form.xlsx" class="btn btn-success">양식파일 다운로드</a>
+		        	   </div>
+	                       
+
+                <br>
+        
                 
+                학력/경력 파일
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+
                 <br>
                 
                 <div class="form-group">
@@ -129,9 +145,9 @@
                         </div>
                     </div>
                 </div>
-                        
+
             </form>
-</form>
+
     <!-- End Content -->
 
     
@@ -152,10 +168,8 @@
                                 <button type="button" class="btn btn-secondary btn-lg px-3" id="infor-btn">다음</button>
                             </div>
 
-                                
                             </div>
 
-                            
                         </div>
 
                     </div>
@@ -163,9 +177,34 @@
             </div>
         </div>
     </section>
-    <!--End Brands-->
+    <!--End Brands-->	
     
     <%@ include file="../include/footer1.jsp"%>
 
 </body>
+
+	<script>
+		$(document).ready(function() {
+			var msg = "${resMap.msg}";
+			if (msg != "")
+				alert(msg);
+		});
+	
+		function _onSubmit() {
+	
+			if ($("#file").val() == "") {
+				alert("파일을 업로드해주세요.");
+				$("#file").focus();
+				return false;
+			}
+	
+			if (!confirm(gTxt("confirm.save"))) {
+				return false;
+			}
+	
+			return true;
+		}
+	</script>
+
+
 </html>

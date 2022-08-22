@@ -62,8 +62,10 @@ public class InsttVO {
 	private String InsttHomeNum;
 	private String InsttAcadBack;
 	private String InsttAcadBackFile;
+	private String InsttAcadBackFileReal;
 	private String InsttCarrer;
 	private String InsttCarrerFile;
+	private String InsttCarrerFileReal;
 	private String InsttEmail;
 	private String InsttPhoneNum;
 	private String InsttBank;

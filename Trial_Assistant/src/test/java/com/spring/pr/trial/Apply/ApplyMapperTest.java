@@ -21,11 +21,10 @@ public class ApplyMapperTest {
 	@Autowired
 	IApplyMapper mapper;
 	
-	@Test
-	public void getListTest() {
-		PageVO vo = new PageVO();
-		System.out.println(mapper.getList(vo));
-	}
+	/*
+	 * @Test public void getListTest() { PageVO vo = new PageVO();
+	 * System.out.println(mapper.getList(vo)); }
+	 */
 		
 	@Test
 	public void registTest() {

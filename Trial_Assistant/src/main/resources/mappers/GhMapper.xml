@@ -45,10 +45,43 @@
 	
 	
 	<insert id="regist">
-	
 		INSERT INTO GH(GH_NUM_SEQ, GH_NAME, GH_OFC_NAME, GH_OFC_NUM, GH_YEAR, GH_SRTTN, GH_SOC_NUM, GH_BSNS_NUM, GH_JOB, GH_FAX, GH_HOME_NUM, GH_ACAD_BACK, GH_ACAD_BACK_FILE, GH_ACAD_BACK_FILE_REAL, GH_CARRER, GH_CARRER_FILE, GH_CARRER_FILE_REAL, GH_EMAIL, GH_PHONE_NUM, GH_BANK, GH_ACC_HOL, GH_BANK_NUM, GH_POST_NUM, GH_ADDR, GH_DTL_ADDR)
 		VALUES(GH_NUM_SEQ_NAME.NEXTVAL, #{ghName}, #{ghOfcName}, #{ghOfcNum}, #{ghYear}, #{ghSrttn}, #{ghSocNum}, #{ghBsnsNum}, #{ghJob}, #{ghFax}, #{ghHomeNum}, #{ghAcadBack}, #{ghAcadBackFile}, #{ghAcadBackFileReal}, #{ghCarrer}, #{ghCarrerFile}, #{ghCarrerFileReal}, #{ghEmail}, #{ghPhoneNum}, #{ghBank}, #{ghAccHol}, #{ghBankNum}, #{ghPostNum}, #{ghAddr}, #{ghDtlAddr})
 	</insert>
+	
+	<select id ="getList" resultMap="GhMap">
+	
+		SELECT * FROM GH
+	
+	</select>
+	
+	<select id="getTotal" resultType="int">
+	
+		select count(*) from GH
+	
+	</select>
+	
+	<select id = "getContent" resultMap="GhMap">
+		select * from GH where GH_NUM_SEQ = #{ghNum}
+	</select>
+	
+	<update id="update">
+		
+		UPDATE GH SET GH_NAME = #{ghName}, GH_OFC_NAME = #{ghOfcName}, GH_OFC_NUM = #{ghOfcNum}, 
+		GH_YEAR = #{ghYear}, GH_SRTTN = #{ghSrttn}, GH_SOC_NUM = #{ghSocNum}, GH_BSNS_NUM = #{ghBsnsNum}, 
+		GH_JOB = #{ghJob}, GH_FAX = #{ghFax}, GH_HOME_NUM = #{ghHomeNum}, 
+		GH_ACAD_BACK = #{ghAcadBack}, GH_ACAD_BACK_FILE = #{ghAcadBackFile}, GH_ACAD_BACK_FILE_REAL = #{ghAcadBackFileReal},
+		GH_CARRER = #{ghCarrer}, GH_CARRER_FILE = #{ghCarrerFile}, GH_CARRER_FILE_REAL = #{ghCarrerFileReal}, 
+        GH_EMAIL = #{ghEmail}, GH_PHONE_NUM = #{ghPhoneNum}, GH_BANK = #{ghBank}, GH_ACC_HOL = #{ghAccHol}, 
+        GH_BANK_NUM = #{ghBankNum}, GH_POST_NUM = #{ghPostNum}, GH_ADDR = #{ghAddr}, GH_DTL_ADDR = #{ghDtlAddr}
+		 
+		where GH_NUM_SEQ = #{ghNum} 
+		
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM GH WHERE GH_NUM_SEQ = #{ghNum}
+	</delete>
 
 	
 </mapper>

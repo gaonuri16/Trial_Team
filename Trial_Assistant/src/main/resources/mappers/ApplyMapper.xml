@@ -56,7 +56,6 @@
 	<select id="getTotal" resultType="int">
 		SELECT COUNT(*)
 		FROM Announcement
-		<include refid="search" />
 	</select>
 	
 	<select id="idCheck" resultType="int">

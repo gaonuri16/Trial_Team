@@ -123,6 +123,7 @@
                                 <input type="text" class="form-control mt-1" name="ghName">
                                 <span id="gene-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
                             </div>
+                            
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputsocnum">주민등록번호</label>
                                 <input type="text" class="form-control mt-1" name="ghSocNum">
@@ -312,8 +313,6 @@
                 <div class="col-lg-6 m-auto">
 
                 </div>
-                                
-                    
                             </div>
 
                             <div class="titlefoot col mt-2">
@@ -337,8 +336,6 @@
     <%@ include file="../include/footer1.jsp"%>
 
 </body>
-</html>
-
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
@@ -470,6 +467,8 @@
 	    }
     	
 </script>
+
+</html>
 
 
 

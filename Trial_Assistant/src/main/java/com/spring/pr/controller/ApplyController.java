@@ -20,22 +20,27 @@ public class ApplyController {
 	@Autowired
 	private IApplyService service;
 	
-	//목록 화면
-		@GetMapping("/applyList")
-		public void applyList(PageVO vo, Model model) {
-			
-			System.out.println(vo);
-			
-			PageCreator pc = new PageCreator();
-			pc.setPaging(vo);
-			pc.setArticleTotalCount(service.getTotal(vo));
-			
-			System.out.println(pc);
-			
-			model.addAttribute("anmList", service.getList(vo));
-			model.addAttribute("pc", pc);		
-			
-		}
+	@GetMapping("applyList")
+	public void applyList() {
+		
+	}
+	
+//	//목록 화면
+//		@GetMapping("/applyList")
+//		public void applyList(PageVO vo, Model model) {
+//			
+//			System.out.println(vo);
+//			
+//			PageCreator pc = new PageCreator();
+//			pc.setPaging(vo);
+//			pc.setArticleTotalCount(service.getTotal(vo));
+//			
+//			System.out.println(pc);
+//			
+//			model.addAttribute("anmList", service.getList(vo));
+//			model.addAttribute("pc", pc);		
+//			
+//		}
 
 //	@PostMapping("/applyList")
 //	public String write(AncmtVO ancmt) {

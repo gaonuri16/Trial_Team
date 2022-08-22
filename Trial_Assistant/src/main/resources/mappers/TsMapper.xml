@@ -49,6 +49,36 @@
 		
 	</insert>
 	
+	<select id ="getList" resultMap="TsMap">
+	
+		SELECT * FROM TS
+	
+	</select>
+	
+	<select id="getTotal" resultType="int">
+	
+		select count(*) from TS
+	
+	</select>
+	
+	<select id = "getContent" resultMap="TsMap">
+		select * from TS where TS_NUM_SEQ = #{tsNum}
+	</select>
+	
+	<update id="update">
+		
+		UPDATE TS SET TS_NAME = #{tsName}, TS_SOC_NUM = #{tsSocNum}, TS_HOME_NUM = #{tsHomeNum}, TS_PHONE_NUM = #{tsPhoneNum}, TS_JOB = #{tsJob}, TS_EMAIL = #{tsEmail},
+		 TS_EXPRT = #{tsExprt}, TS_LNGG = #{tsLngg}, TS_DSG_CRT = #{tsDsgCrt}, TS_ACTIVE_AREA = #{tsActiveArea}, TS_ACAD_BACK = #{tsAcadBack}, TS_ACAD_BACK_FILE = #{tsAcadBackFile}, TS_ACAD_BACK_FILE_REAL = #{tsAcadBackFileReal},
+		  TS_CARRER = #{tsCarrer}, TS_CARRER_FILE = #{tsCarrerFile}, TS_CARRER_FILE_REAL = #{tsCarrerFileReal}, TS_BANK = #{tsBank}, TS_ACC_HOL = #{tsAccHol}, TS_BANK_NUM = #{tsBankNum}, TS_POST_NUM = #{tsPostNum}, TS_ADDR = #{tsAddr}, TS_DTL_ADDR = #{tsDtlAddr}
+		 
+		where TS_NUM_SEQ = #{tsNum} 
+		
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM TS WHERE TS_NUM_SEQ = #{tsNum}
+	</delete>
+	
 	
 	
 

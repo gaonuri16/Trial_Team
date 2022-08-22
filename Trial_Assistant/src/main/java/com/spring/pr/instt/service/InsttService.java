@@ -1,5 +1,7 @@
 package com.spring.pr.instt.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,34 @@ public class InsttService implements IInsttService {
 	IInsttMapper mapper;
 	
 	@Override
-	public void regist(InsttVO vo) {
-		mapper.regist(vo);
+	public void regist(InsttVO instt) {
+		mapper.regist(instt);
+	}
+
+	@Override
+	public List<InsttVO> getList() {
+		return mapper.getList();
+	}
+
+	@Override
+	public int getTotal() {
+		return mapper.getTotal();
+	}
+
+	@Override
+	public InsttVO getContent(int bno) {
+		return mapper.getContent(bno);
+	}
+
+	@Override
+	public void update(InsttVO instt) {
+		mapper.update(instt);
+		
+	}
+
+	@Override
+	public void delete(int bno) {
+		mapper.delete(bno);
 	}
 
 }

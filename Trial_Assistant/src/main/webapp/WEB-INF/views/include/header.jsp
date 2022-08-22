@@ -71,7 +71,7 @@
                                 <a class="nav-link" href="about.html">공지사항</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="shop.html">조력자 신청 </a>
+                                <a class="nav-link" href="<c:url value='/apply/applyList' />">조력자 신청</a>
                             </li>
                             
                         </ul>
