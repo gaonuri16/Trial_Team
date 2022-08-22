@@ -1,8 +1,6 @@
 package com.spring.pr.util;
 
-
 public class EgovWebUtil {
-
 	public static String filePathBlackList(String value) {
 		String returnValue = value;
 		if (returnValue == null || returnValue.trim().equals("")) {

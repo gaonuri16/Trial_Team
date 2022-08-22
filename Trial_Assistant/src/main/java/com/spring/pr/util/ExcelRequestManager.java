@@ -21,10 +21,10 @@ public class ExcelRequestManager {
 		String atchFileIdString = "";
 
 		if("".equals(storePath) || storePath == null) {
-			storePathString = "C:\\Users\\user\\Desktop\\Ds\\Trial_Team\\Upload"; 
+			storePathString = "C:\\Users\\ahndasol\\Desktop\\test"; 
 
 		}else {
-			storePathString = "C:\\Users\\user\\Desktop\\Ds\\Trial_Team\\Upload" + storePath; 
+			storePathString = "C:\\Users\\ahndasol\\Desktop\\test" + storePath; 
 		}
 
 		if(!"".equals(atchFileId) || atchFileId != null) {

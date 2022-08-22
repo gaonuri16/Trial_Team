@@ -86,7 +86,7 @@
 
 <jsp:include page="../include/header.jsp" />
 
-<!-- Start Content -->
+	<!-- Start Content -->
     <div class="container py-5">
         <div class="row">
             <div class="container-fluid py-3">
@@ -97,62 +97,71 @@
                 </section>
             </div>
 
-            <form name="insttRegistForm" method="post" onsubmit="return _onSubmit();" action="<c:url value='apply/insttRegistForm'/>" enctype="multipart/form-data" class="col-md-5 m-auto">
-                <div class="mb-3">
-                    <label for="inputbnsnnum">사업자 번호</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="bnsn-num" name="bnsn-num">
-                            <button class="btn btn-success">기관 등록 여부 확인</button>
-                        </div>
-                        <span id="bnsn-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
-                        
-                        
-                        <br>
-                        <br>
 
-	                    신청서 업로드하기
- 	                    <!-- <input type="file" name="file" id="file" accept=".xlsx, .xls"/> -->
-	                    <input type="file" id="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file" accept=".xlsx, .xls" >
-	                    
-	                    <p></p>
-	            
-	                    
-	                    <div class="pull-right">
-				            <input type="submit" value="엑셀파일 업로드" class="btn btn btn-success" />
-				            <a href="${path}/document/applicant_excelUpload_form.xlsx" class="btn btn-success">양식파일 다운로드</a>
-		        	   </div>
-	                       
+			<form name="inputForm" method="post" onsubmit="return _onSubmit();"
+				action="<c:url value='/apply/insttRegistForm'/>"
+				enctype="multipart/form-data"
+				class="form-horizontal col-md-5 m-auto">
+				<div class="mb-3">
+					<label for="inputbnsnnum">사업자 번호</label>
+					<div class="input-group">
+						<input type="text" class="form-control" id="bnsn-num"
+							name="bnsn-num">
+						<button class="btn btn-success">기관 등록 여부 확인</button>
+					</div>
+					<span id="bnsn-num-msg">*필수 사항입니다.</span>
+					<!--자바스크립트에서 추가-->
+					
+					
+					<br>
+					<br>
+						<div class="mb-3">
+							<label for="inputbnsnnum">신청서 업로드하기</label>
+							<div class="input-group">
+								<input type="file" name="file" id="file" accept=".xlsx, .xls" class="form-control" />
+								<input type="submit" value="엑셀파일 업로드" class="btn btn btn-success" />
+							</div>
+							
+							<br>
 
-                <br>
-        
-                
-                학력/경력 파일
-                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+					<div class="pull-right">
+						<a href="${path}/document/applicant_excelUpload_form.xlsx"
+							class="btn btn-outline-secondary">신청서 양식 다운로드</a>
+					</div>
 
-                <br>
-                
-                <div class="form-group">
-                    <label for="hp-result-alram">신청 진행 및 결과 알림</label>
-                    <div id="hp-result-alram">
-                        <div>
-                            SMS <input type="checkbox" id="result-alarm">
-                        </div>
-                        <div>
-                            전화 <input type="checkbox" id="result-alarm">
-                        </div>
-                        <div>
-                            이메일 <input type="checkbox" id="result-alarm">
-                        </div>
-                    </div>
-                </div>
 
-            </form>
+					<p></p>
+					<br>
 
-    <!-- End Content -->
 
-    
+					학력/경력 파일 <input type="file" class="form-control"
+						id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+						aria-label="Upload">
 
-    <!-- Start Brands -->
+					<p></p>
+					<br>
+
+					<div class="form-group">
+						<label for="hp-result-alram">신청 진행 및 결과 알림</label>
+						<div id="hp-result-alram">
+							<div>
+								SMS <input type="checkbox" id="result-alarm">
+							</div>
+							<div>
+								전화 <input type="checkbox" id="result-alarm">
+							</div>
+							<div>
+								이메일 <input type="checkbox" id="result-alarm">
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<!-- End Content -->
+
+
+
+			<!-- Start Brands -->
     <section class="py-5">
         <div class="container my-4">
             <div class="row text-center py-3">
@@ -184,26 +193,27 @@
 </body>
 
 	<script>
-		$(document).ready(function() {
-			var msg = "${resMap.msg}";
-			if (msg != "")
-				alert(msg);
-		});
-	
-		function _onSubmit() {
-	
-			if ($("#file").val() == "") {
-				alert("파일을 업로드해주세요.");
-				$("#file").focus();
-				return false;
-			}
-	
-			if (!confirm(gTxt("confirm.save"))) {
-				return false;
-			}
-	
-			return true;
-		}
+    
+	    $(document).ready(function() {
+	      var msg = "${resMap.msg}";
+	        if(msg != "") alert(msg);
+	    });
+	    
+	    function _onSubmit(){
+	        
+	        if($("#file").val() == ""){
+	            alert("파일을 업로드해주세요.");
+	            $("#file").focus();
+	            return false;
+	        }
+	        
+	        if(!confirm(gTxt("confirm.save"))){
+	            return false;
+	        }
+	        
+	        return true;
+	    }
+    
 	</script>
 
 

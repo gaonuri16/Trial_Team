@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>조력자 신청</title>
+<title>조력자 본인인증</title>
 
-<!-- 페이지 무조건 추가  -->
+	<!-- 페이지 무조건 추가  -->
 	<link rel="shortcut icon" type="image/x-icon"
 		href="${pageContext.request.contextPath }/resources/images/favicon.ico">
 	
@@ -44,77 +44,65 @@
 	
 </head>
 
-	<style>
+<style>
+    /* 푸터 */
+    .under-footer {
+        height: 150px;
+    }
 
-        .btn-success {
-            margin-top: 15px;
+    .footer-box2 {
+        padding: 20px 0px;
+        position: relative;
+        left: 160px;
+        bottom: 115px;
+        font-size: 17px !important;
+        font-weight: 100 !important;
+        line-height: 30px;
+    }
 
-        }
-        
-        .content-row{
-            display: flex;
-            justify-content: center;
-        }
+    .titlefoot {
+        text-align: center;
+        margin: 70px auto;
+    }
 
-        .board-table{
-            width: 100%;
-        }
+    #hp-certifi {
+        width: 300px;
+        height: 300px;
+    }
 
-    </style>
-    
-    
+</style>
+
 <body>
 
-	<jsp:include page="../include/header.jsp" />
+<jsp:include page="../include/header.jsp" />
 
-     <!-- Start Content -->
+<!-- Start Content -->
     <div class="container py-5">
         <div class="row">
             <div class="container-fluid py-3">
                 <section class="container py-5">
                     <div>
-                        <h1>기관 추천 조력자 신청</h1><hr width="1250">
+                        <h1>본인인증</h1><hr width="1250">
                     </div>
                 </section>
             </div>
 
-            <form class="col-md-5 m-auto" method="post" role="form" id="instt-info">
-                <div class="mb-3">
-                    <label for="inputbnsnnum">사업자 번호</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="bnsn-num" name="bnsn-num">
-                            <button class="btn btn-success">기관 등록 여부 확인</button>
+                    <br>
+            
+                            <div class="titlefoot">
+                                <button type="submit" class="btn btn-outline-secondary btn-lg px-3" id="hp-certifi">휴대폰 인증</button>
+                                <button type="button" class="btn btn-outline-secondary btn-lg px-3" id="hp-certifi">신용카드 인증</button>
+                                <button type="button" class="btn btn-outline-secondary btn-lg px-3" id="hp-certifi">간편 인증</button>
+                            </div>
                         </div>
-                        <span id="bnsn-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
-                        
-                        
-                        <br>
-                        <br>
-
-                    신청서 업로드하기    
-                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    </form>
                 </div>
-
-                <br>
-                
-                <div class="form-group">
-                    <label for="hp-result-alram">신청 진행 및 결과 알림</label>
-                    <div id="hp-result-alram">
-                        <div>
-                            SMS <input type="checkbox" id="result-alarm">
-                        </div>
-                        <div>
-                            전화 <input type="checkbox" id="result-alarm">
-                        </div>
-                        <div>
-                            이메일 <input type="checkbox" id="result-alarm">
-                        </div>
-                    </div>
-                </div>
-
-            </form>
-
+            </div>
+        </div>
+    </div>
     <!-- End Content -->
+        
+
 
     
 
@@ -130,8 +118,8 @@
                             </div>
 
                             <div class="titlefoot col mt-2">
-                                <button type="submit" class="btn btn-secondary btn-lg px-3" id="infor-btn">이전</button>
-                                <button type="button" class="btn btn-secondary btn-lg px-3" id="infor-btn">다음</button>
+                                <button type="submit" class="btn btn-secondary btn-lg px-3">이전</button>
+                                <button type="button" class="btn btn-secondary btn-lg px-3">다음</button>
                             </div>
 
                                 
@@ -146,8 +134,8 @@
         </div>
     </section>
     <!--End Brands-->
-        
-        <%@ include file="../include/footer1.jsp"%>
+    
+    <%@ include file="../include/footer1.jsp"%>
 
 </body>
 </html>

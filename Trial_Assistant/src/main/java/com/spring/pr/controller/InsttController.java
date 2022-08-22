@@ -32,66 +32,65 @@ public class InsttController {
 	@GetMapping("insttRegist")
 	public void insttRegist() {}
 	
-	//기관 신청 처리
 	@PostMapping("/insttRegistForm")
 	public String createApplicant_action(
-			@ModelAttribute("insttVO") InsttVO instt,
-			RedirectAttributes redirectAttributes,
-			HttpServletRequest request,
-			MultipartHttpServletRequest multiRequest,
-			ModelMap model) {
-
+	        @ModelAttribute("insttVO") InsttVO instt,
+	        RedirectAttributes redirectAttributes,
+	        HttpServletRequest request,
+	        MultipartHttpServletRequest multiRequest,
+	        ModelMap model) {
+		
 		Map<String, Object> resMap = new HashMap<String, Object>();
-
-
+		
+		
 		try {
+			
+		    ExcelRequestManager em = new ExcelRequestManager();
+		    final Map<String, MultipartFile> files = multiRequest.getFileMap();
+		    List<HashMap<String, String>> apply = null; 
+		    
+		    apply = em.parseExcelSpringMultiPart(files,"applicant", 0, "", "reserve");
+		    
+		    for(int i = 0; i < apply.size(); i++) {
+		    	instt.setInsttName(apply.get(i).get("cell_0"));
+		    	instt.setInsttSocNum(apply.get(i).get("cell_1"));
+		    	instt.setInsttHomeNum(apply.get(i).get("cell_2"));
+		    	instt.setInsttPhoneNum(apply.get(i).get("cell_3"));
+		    	instt.setInsttJob(apply.get(i).get("cell_4"));
+		    	instt.setInsttEmail(apply.get(i).get("cell_5"));
+		    	instt.setInsttDtlSrttn(apply.get(i).get("cell_6"));
+		    	instt.setInsttSrttn(apply.get(i).get("cell_7"));
+		    	instt.setInsttBsnsNum(apply.get(i).get("cell_8"));
+		    	instt.setInsttFax(apply.get(i).get("cell_9"));
+		    	instt.setInsttOfcName(apply.get(i).get("cell_10"));
+		    	instt.setInsttAcadBack(apply.get(i).get("cell_11"));
+		    	instt.setInsttCarrer(apply.get(i).get("cell_12"));
+		    	instt.setInsttBank(apply.get(i).get("cell_13"));
+		    	instt.setInsttAccHol(apply.get(i).get("cell_14"));
+		    	instt.setInsttBankNum(apply.get(i).get("cell_15"));
+		    	instt.setInsttPostNum(apply.get(i).get("cell_16"));
+		    	instt.setInsttAddr(apply.get(i).get("cell_17"));
+		    	instt.setInsttDtlAddr(apply.get(i).get("cell_18"));
+			    System.out.println(instt.toString());
+			    service.regist(instt);
 
-			ExcelRequestManager em = new ExcelRequestManager();
-			final Map<String, MultipartFile> files = multiRequest.getFileMap();
-			List<HashMap<String, String>> apply = null; 
-
-			apply = em.parseExcelSpringMultiPart(files,"applicant", 0, "", "reserve");
-
-			for(int i = 0; i < apply.size(); i++) {
-				instt.setInsttName(apply.get(i).get("cell_0"));
-				instt.setInsttSocNum(apply.get(i).get("cell_1"));
-				instt.setInsttHomeNum(apply.get(i).get("cell_2"));
-				instt.setInsttPhoneNum(apply.get(i).get("cell_3"));
-				instt.setInsttJob(apply.get(i).get("cell_4"));
-				instt.setInsttEmail(apply.get(i).get("cell_5"));
-				instt.setInsttDtlSrttn(apply.get(i).get("cell_6"));
-				instt.setInsttSrttn(apply.get(i).get("cell_7"));
-				instt.setInsttBsnsNum(apply.get(i).get("cell_8"));
-				instt.setInsttFax(apply.get(i).get("cell_9"));
-				instt.setInsttOfcName(apply.get(i).get("cell_10"));
-				instt.setInsttAcadBack(apply.get(i).get("cell_11"));
-				instt.setInsttCarrer(apply.get(i).get("cell_12"));
-				instt.setInsttBank(apply.get(i).get("cell_13"));
-				instt.setInsttAccHol(apply.get(i).get("cell_14"));
-				instt.setInsttBankNum(apply.get(i).get("cell_15"));
-				instt.setInsttPostNum(apply.get(i).get("cell_16"));
-				instt.setInsttAddr(apply.get(i).get("cell_17"));
-				instt.setInsttDtlAddr(apply.get(i).get("cell_18"));
-				System.out.println(instt.toString());
-				service.regist(instt);
-
-			}
-
-
-			resMap.put("res", "ok");
-			resMap.put("msg", "txt.success");
-			System.out.println(resMap.toString());
-
+		    }
+		    
+		    
+		    resMap.put("res", "ok");
+		    resMap.put("msg", "txt.success");
+		    System.out.println(resMap.toString());
+		    
 		}
 		catch(Exception e){
 			System.out.println(e.toString());
 			resMap.put("res", "error"); 
 			resMap.put("msg", "txt.fial"); 
 		}
-
+		
 		redirectAttributes.addFlashAttribute("resMap", resMap);
-		return "/home";
-
+		return "apply/insttRegist";
+		
 	}
 
 }
