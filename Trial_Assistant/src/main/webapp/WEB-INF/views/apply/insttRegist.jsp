@@ -116,10 +116,11 @@
 					<br>
 					<br>
 						<div class="mb-3">
-							<label for="inputbnsnnum">신청서 업로드하기</label>
+							<label for="inputbnsnnum">신청서 업로드하기</label><span id="bnsn-num-msg"> *필수 사항입니다.</span>
 							<div class="input-group">
 								<input type="file" name="file" id="file" accept=".xlsx, .xls" class="form-control" />
 								<input type="submit" value="엑셀파일 업로드" class="btn btn btn-success" />
+								첨부할 파일을 선택하고 업로드하기를 눌러주세요
 							</div>
 							
 							<br>
@@ -175,8 +176,8 @@
                             </div>
 
                             <div class="titlefoot col mt-2">
-                                <button type="submit" class="btn btn-secondary btn-lg px-3" id="infor-btn">이전</button>
-                                <button type="button" class="btn btn-secondary btn-lg px-3" id="infor-btn">다음</button>
+                                <button type="submit" class="btn btn-secondary btn-lg px-3" id="prevBtn">이전</button>
+                                <button type="button" class="btn btn-secondary btn-lg px-3" id="insttNextBtn">다음</button>
                             </div>
 
                             </div>
@@ -215,6 +216,26 @@
 	        
 	        return true;
 	    }
+	    
+	    $(function() {
+			$('#insttNextBtn').click(function() {
+				if($('input[name=ghName]').val() === '') {
+					alert('이름은 필수 항목입니다.');
+					$('input[name=ghName]').focus();
+					return;
+				
+				} else {
+					document.insttFile.submit();
+				}
+			});
+			
+			/* $('#nextBtn').click(function() {
+				if(confirm('등록 하시겠습니까?')) {
+					location.href='<c:url value="/apply/success" />'
+				} else return;
+			}) */
+
+		});
     
 	</script>
 
