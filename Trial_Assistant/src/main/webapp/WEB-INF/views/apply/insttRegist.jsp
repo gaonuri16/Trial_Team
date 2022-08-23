@@ -133,10 +133,11 @@
 					<p></p>
 					<br>
 
-
-					학력/경력 파일 <input type="file" class="form-control"
-						id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
-						aria-label="Upload">
+						<form class="form-total" action="<c:url value='/apply/insttFile' />" method="post" name="apply/insttFile" enctype="multipart/form-data">
+						학력/경력 파일 <input type="file" name="file" class="form-control"
+							id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+							aria-label="Upload"><span id="bnsn-num-msg">*필수 사항입니다.</span>
+						</form>
 
 					<p></p>
 					<br>

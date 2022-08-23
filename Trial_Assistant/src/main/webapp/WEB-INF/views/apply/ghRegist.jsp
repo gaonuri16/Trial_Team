@@ -224,7 +224,7 @@
                         <p></p>
 
                         <div class="mb-3">
-                            <label for="inputacaback">학력</label><span id="">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
+                            <label for="inputacaback">학력</label><span id="gene-num-msg"> *필수 사항입니다.</span><!--자바스크립트에서 추가-->
                             <textarea class="form-control mt-1" id="aca-back" name="ghAcadBack" rows="10"></textarea>
                             <input type="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file">
 
@@ -232,7 +232,7 @@
                             <br>
 
                             <div class="mb-3">
-                                <label for="inputcarrer">경력</label><span id="">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
+                                <label for="inputcarrer">경력</label><span id="gene-num-msg"> *필수 사항입니다.</span><!--자바스크립트에서 추가-->
                                 <textarea class="form-control mt-1" id="carrer" name="ghCarrer" rows="10"></textarea>
                                <input type="file" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="file">
                             </div>
@@ -245,18 +245,18 @@
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputbank">입금 은행</label>
                                 <input type="text" class="form-control mt-1" id="bank" name="ghBank">
-                                <span id="">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
+                                <span id="gene-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
                             </div>
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputacchol">예금주</label>
                                 <input type="text" class="form-control mt-1" id="acc-hol" name="ghAccHol">
-                                <span id="">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
+                                <span id="gene-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
                             </div>
 
                             <div class="form-group col-md-6 mb-3">
                                 <label for="inputbanknum">계좌번호</label>
                                 <input type="text" class="form-control mt-1" id="acc-hol" name="ghBankNum">
-                                <span id="">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
+                                <span id="gene-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
                             </div>
                         </div>
 
@@ -264,7 +264,7 @@
                         <br>
                         
                         <div class="form-group">
-	                            <label for="addr-num">주소</label> <span id="">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
+	                            <label for="addr-num">주소</label> <span id="gene-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
 	                        <div class="input-group">
 	                            <input type="text" name="ghPostNum" class="form-control" id="ghPostNum" placeholder="우편번호" readonly>
 	                            <div class="input-group-addon">
@@ -275,10 +275,10 @@
 	                        
 	                        <input type="text" name="ghAddr" class="form-control" id="ghAddr" placeholder="기본주소">
                             <input type="text" name="ghDtlAddr" class="form-control" id="ghDtlAddr" placeholder="상세주소">
-                            <span id="gene-num-msg">*필수 사항입니다.</span><!--자바스크립트에서 추가-->
                         
                         <p></p>
                         <p></p>
+                        <br>
                         
 
                         <div class="form-group">
@@ -288,10 +288,10 @@
                                     SMS <input type="checkbox" id="result-alarm">
                                 </div>
                                 <div>
-                                    전화 <input type="checkbox" id="result-alarm">
+                                   	 전화 <input type="checkbox" id="result-alarm">
                                 </div>
                                 <div>
-                                    이메일 <input type="checkbox" id="result-alarm">
+                                    	이메일 <input type="checkbox" id="result-alarm">
                                 </div>
                             </div>
                         </div>
