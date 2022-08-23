@@ -56,7 +56,7 @@ public class NoticeController {
 		
 		
 		// 서버에서 파일을 저장할 경로 
-		String uploadPath = "C:\\Users\\user\\Desktop\\upload"+filelocation;
+		String uploadPath = "/Users/sig6774/Desktop/Project_Workspace/IMAGE/NOTICE"+filelocation;
 		
 		File folder = new File(uploadPath);
 		if(!folder.exists()) {
