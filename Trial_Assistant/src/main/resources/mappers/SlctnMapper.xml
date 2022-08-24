@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.spring.pr.slctn.mapper.ISlctnMapper">
+
+	<resultMap type="com.spring.pr.command.SlctnVO" id="SlctnMap">
+		<id column="SEL_NUM_SEQ" property="SelNum"/>
+		<result column="SEL_NAME" property="SelName"/>
+		<result column="SEL_SUBCAT" property="SelSubcat"/>
+		<result column="SEL_SCORE" property="SelScore"/>
+		<result column="JOIN_ID" property="JoinId"/>
+	</resultMap>
+	
+	<insert id="SlctnRegist">
+		INSERT INTO Slctn
+		(SEL_NUM_SEQ, SEL_NAME, SEL_SUBCAT, SEL_SCORE, JOIN_ID)
+		VALUES (SEL_NUM_SEQ_NAME.NEXTVAL, #{SelName}, #{SelSubcat}, #{SelScore}, #{JoinId})
+	</insert>
+	
+	<select id="getSlctnList" resultMap="SlctnMap">
+		SELECT * FROM Slctn
+	</select>
+	
+	<select id="getSlctnTotal" resultType="int">
+		SELECT COUNT(*) FROM Slctn
+	</select>
+	
+	<select id="getSlctnContent" resultMap="SlctnMap">
+		SELECT * FROM Slctn
+		WHERE SEL_NUM_SEQ = #{SelNum}
+	</select>
+	
+	<update id="updateSlctn">
+		UPDATE Slctn SET
+		SEL_NAME = #{SelName}, SEL_SUBCAT = #{SelSubcat}, SEL_SCORE = #{SelScore}
+		WHERE SEL_NUM_SEQ = #{SelNum}
+	</update>
+	
+	<delete id="deleteSlctn">
+		DELETE FROM Slctn
+		WHERE SEL_NUM_SEQ = #{SelNum}
+	</delete>
+
+</mapper>

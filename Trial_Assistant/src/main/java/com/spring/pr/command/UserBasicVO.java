@@ -17,13 +17,13 @@ public class UserBasicVO {
 	CREATE TABLE UserBasic (
 		JOINID	VARCHAR2(20)	NOT NULL,
 		JOINSOCNUM	VARCHAR2(20)	NOT NULL,
-		ANMNOSEQ	NUMBER(10)	NOT NULL,
+		ANMNOSEQ	NUMBER(10) NULL,
 		JOINPERSON	VARCHAR2(2) DEFAULT 0	NOT NULL	
-		); 
+	);
 	*/
 
-	public String JOINID;
-	public String JOINSOCNUM;
-	public int ANMNOSEQ;
-	public String JOINPERSON;
+	private String JoinId;
+	private String JoinSocNum;
+	private int AnmNum;
+	private String JoinPerson;
 }
