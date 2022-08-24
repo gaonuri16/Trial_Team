@@ -6,11 +6,17 @@ import com.spring.pr.command.GhVO;
 import com.spring.pr.command.InsttVO;
 import com.spring.pr.command.TotalApplierVO;
 import com.spring.pr.command.TsVO;
+import com.spring.pr.util.PageVO;
+import com.spring.pr.util.SearchVO;
 
 public interface IAppService {
 	
 	//등재 신청자 목록
-	List<TotalApplierVO> getAppList();
+	//List<TotalApplierVO> getAppList();
+	List<TotalApplierVO> getAppList(SearchVO search);
+	
+	//총 등재 신청자
+	int getAppTotal(PageVO paging);
 	
 	//등재 신청자 상세보기(일반조력자)
 	GhVO getGhAppContent(int AppNum);
@@ -32,14 +38,14 @@ public interface IAppService {
 	
 	//등재 신청자 삭제
 	void deleteApp(int AppNum);
-	
+
 	//등재 신청자 삭제(일반조력자)
-	void deleteGhApp(int GhNum);
-	
+	void deleteGhApp(int AppNum);
+
 	//등재 신청자 삭제(통번역인)
-	void deleteTsApp(int TsNum);
+	void deleteTsApp(int AppNum);
 	
 	//등재 신청자 삭제(기과추천조력자)
-	void deleteInsttApp(int InsttNum);
-	
+	void deleteInsttApp(int AppNum);
+
 }

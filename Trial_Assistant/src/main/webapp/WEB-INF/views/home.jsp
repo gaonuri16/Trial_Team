@@ -52,7 +52,7 @@
 
 <body>
 
-	<jsp:include page="include/header.jsp" /> 
+	<jsp:include page="include/header2.jsp" /> 
 
 
 	<!-- Start Banner Hero -->
