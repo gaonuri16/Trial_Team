@@ -474,9 +474,9 @@ function searchAddress1() {
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
             document.getElementById('joinAddrNum').value = data.zonecode;
-            document.getElementById("joinAddrBasic").value = addr;
+            document.getElementById('joinAddrBasic').value = addr;
             // 커서를 상세주소 필드로 이동한다.
-            document.getElementById("joinAddrDetail").focus();
+            document.getElementById('joinAddrDetail').focus();
         }
     }).open();
 }
@@ -500,9 +500,9 @@ function searchAddress2() {
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
             document.getElementById('insAddrNum').value = data2.zonecode;
-            document.getElementById("insAddrBasic").value = addr;
+            document.getElementById('insAddrBasic').value = addr;
             // 커서를 상세주소 필드로 이동한다.
-            document.getElementById("insAddrDetail").focus();
+            document.getElementById('insAddrDetail').focus();
         }
     }).open();
 }

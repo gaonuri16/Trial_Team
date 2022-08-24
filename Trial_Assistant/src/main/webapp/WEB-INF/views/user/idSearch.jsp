@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> 로그인 페이지  </title>
+    <title> 아이디 찾기 페이지  </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,9 +45,9 @@
 	<!-- End Script -->
 	
 	<!-- 무조건 페이지 추가  -->
-<style>
-
-/* 푸터 */
+	<style>
+	
+	/* 푸터 */
     .under-footer {
         height: 150px;
     }
@@ -61,9 +61,7 @@
         font-weight: 100 !important;
         line-height: 30px;
     }
-/* Start joinSelect.css */
-
-/* login.html의 css*/
+	
 .title-box{
     text-align: center;
     justify-content: center;
@@ -77,10 +75,11 @@
     font-weight: 500 !important;
 }
 
-.form-box{
-    max-width: 400px;
-
+.id-search-box{
+    margin: 0 auto;
+    width: 400px;
 }
+
 
 label {
     font-weight: 700 !important;
@@ -90,114 +89,94 @@ button:hover{
     cursor: pointer;
 }
 .btn-box{
-    margin-top: 70px;
-    margin-left: 33px;
-    width: 100%;
+    margin-top: 100px;
+    width: 800px;
 }
-
-.id-btn{
+.idSearch-btn, .cencel-btn{
+    text-align: center;
     float: left;
-    margin: 0 5px;
-    box-sizing: border-box;
-}
-.pw-btn{
-    float: left;
-    margin: 0 5px;
-    box-sizing: border-box;
-}
-.login-btn{
-    float: left;
-    margin: 0 5px;
-    box-sizing: border-box;
-    
+    margin-left: 75px;
 }
 
 
 </style>
+
 </head>
 <body>
-	<jsp:include page="../include/header.jsp" /> 
+
+<jsp:include page="../include/header.jsp" /> 
 
 
-<!-- Start 로그인 -->
+<!-- Start 아이디 찾기 -->
 <div class="container py-5">
     <div class="row">
-        <form class="form-box m-auto" method="post" role="form" id="loginForm" action="<c:url value='/user/Login'/>"> 
+        <form class="col-4 id-search-box" id="idSearchForm" action="<c:url value='/user/IdSearch' />" method="post" role="form">
 
-            <div class="title-box">로그인</div>
+            <div class="title-box">아이디 찾기</div>
 
          
             <div class="mb-3">
-                <label for="inputJoinId">아이디</label>
-                <input type="text" class="form-control mt-1" id="JOINID" name="JOINID" placeholder="아이디를 입력하세요.">
+                <label for="inputJoinName">이름</label>
+                <input type="text" class="form-control mt-1" id="joinName" name="JOINNAME" placeholder="이름을 입력하세요.">
             </div>
-            <div class="mb-3 ">
-                <label for="inputJoinPw">비밀번호</label>
-                <input type="password" class="form-control mt-1" id="JOINPW" name="JOINPW"  placeholder="비밀번호를 입력하세요.">
+            <div class="mb-3">
+                <label for="inputJoinSocNum">주민등록번호</label>
+                <input type="password" class="form-control mt-1" id="joinSocNum" name="JOINSOCNUM" placeholder="주민등록번호를 입력하세요.">
             </div>
            
-            <div class="btn-box">
-                <div class="id-btn">
-                    <button type="button" id="idSearch" class="btn btn-outline-secondary">아이디 찾기</button>
+            <div class="btn-box mb-3">
+                <div class="col mb-3 idSearch-btn">
+                    <button type="submit" id="idSearch-btn" class="btn btn-outline-secondary ">아이디 찾기</button>
                 </div>
-                <div class="pw-btn">
-                    <button type="button" id="pwSearch" class="btn btn-outline-secondary">비밀번호 찾기</button>
-                </div>
-                <div class="login-btn">
-                    <button type="button" id="loginBtn" class="btn btn-outline-secondary">로그인</button>
+                
+                <div class="col mb-3 cencel-btn">
+                    <button type="button" id="cencelBtn" class="btn btn-outline-secondary">취소</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-<!-- End 로그인 -->
+<!-- End 아이디 찾기 -->
+
+
 
 
 <%@ include file="../include/footer1.jsp"%>
 
-
-
 </body>
 
- <script>
-    	const msg = '${msg}';
-    	if(msg === 'joinSuccess') {
-    		alert('로그인 정상 처리되었습니다.');
-    	} else if(msg === 'loginFail') {
-    		alert('로그인 실패! 아이디와 비밀번호를 확인하세요.');
-    	}
-    	
-    	//입력란이 공백인 지를 확인한 후, 공백이 아니라면 submit() 진행.
-    	//mapper에 작성한 login 메서드의 리턴 타입은 UserVO
-    	//리턴 타입에 맞게 sql문을 작성 해 주시면 되겠습니다.
-    	$(function() {
-			$('#loginBtn').click(function() {
-				if($('#JOINID').val() === '') {
-					alert('아이디를 입력해주세요.');
-					return;
-				} else if($('#JOINPW').val() === '') {
-					alert('비밀번호를 작성하세요.');
-					return;
-				} else {
-					$('#loginForm').submit();
-				}
-			});
-		});
-    	
-    	$(function() {
-    		$('#idSearch').click(function(){
-    			location.href="<c:url value='/user/idSearch'/>";
-    		})
-    	})
-    	
-    	$(function() {
-    		$('#pwSearch').click(function(){
-    			location.href="<c:url value='/user/pwSearch'/>";
-    		})
-    	})
-    	
-    	
-    	
-    	
-    </script>
+<script>
+
+
+/* $(function() {
+	$('#idSearch').click(function(){
+		location.href='../user/idSearch';
+	})
+}) */
+
+
+$(function() {
+	$('#idSearch-btn').click(function() {
+		if($('#joinName').val() === '') {
+			alert('이름을 입력해주세요.');
+			return history.back();
+		} else if($('#joinSocNum').val() === '') {
+			alert('주민등록번호를 입력해주세요.');
+			return history.back();
+		} else {
+			$('#pwSearchForm').submit();
+		}
+	});
+});
+
+$(function() {
+	 $('#cencelBtn').click(function(){
+	 	location.href="<c:url value='/user/login'/>";
+	 	})
+	 })
+
+
+
+</script>
+
 </html>

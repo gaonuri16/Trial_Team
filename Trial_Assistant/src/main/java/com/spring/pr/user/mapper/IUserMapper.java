@@ -1,8 +1,8 @@
 package com.spring.pr.user.mapper;
 
-import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.*;
 
-import com.spring.pr.command.UserVO;
+import com.spring.pr.command.*;
 
 public interface IUserMapper {
 	
@@ -16,10 +16,13 @@ public interface IUserMapper {
 	UserVO login(@Param("JOINID") String JOINID, @Param("JOINPW") String JOINPW);
 	
 	//아이디 찾기 
-	UserVO idSearch(@Param("JOINNAME") String JOINNAME, @Param("JOINSOCNUM") String JOINSOCNUM);
+	UserVO idSearch(@Param("JOINNAME") String joinName, @Param("JOINSOCNUM") String joinSocNum);
 		
-	//비밀번호 재등록
-	void pwSearch(UserVO user);
+	//비밀번호 찾기 
+	UserVO pwSearch(@Param("JOINNAME") String joinName, @Param("JOINSOCNUM") String joinSocNum);
+	
+	// 비밀번호 재등록 
+	void newPwRegist(UserVO user);
 	
 	//회원 정보 얻어오기 
 	UserVO getInfo(String JOINID);

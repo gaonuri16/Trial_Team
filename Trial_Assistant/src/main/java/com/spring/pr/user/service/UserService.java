@@ -1,12 +1,10 @@
 package com.spring.pr.user.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
 
-import com.spring.pr.command.UserBasicVO;
-import com.spring.pr.command.UserDetailVO;
-import com.spring.pr.command.UserVO;
-import com.spring.pr.user.mapper.IUserMapper;
+import com.spring.pr.command.*;
+import com.spring.pr.user.mapper.*;
 
 @Service
 public class UserService implements IUserService {
@@ -26,37 +24,45 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public void login(String JOINID, String JOINPW) {
-		// TODO Auto-generated method stub
+	public UserVO login(String JOINID, String JOINPW) {
+		return mapper.login(JOINID, JOINPW);
+	}
+
+	@Override
+	public UserVO idSearch(String joinName, String joinSocNum) {
+		return mapper.idSearch(joinName, joinSocNum);
+	}
+
+	@Override
+	public UserVO pwSearch(String joinName, String joinSocNum) {
+		return mapper.pwSearch(joinName, joinSocNum);
+
+	}
+	
+	@Override
+	public void newPwRegist(UserVO user) {
+		 mapper.newPwRegist(user);
+	}
+
+	@Override
+	public UserVO getInfo(String JOINID) {
+		return mapper.getInfo(JOINID);
 
 	}
 
 	@Override
-	public void idSearch(String JOINNAME, String JOINSOCNUM) {
-		// TODO Auto-generated method stub
+	public void updateUser(UserVO user) {
+		mapper.updateUser(user);
 
 	}
 
 	@Override
-	public void pwSearch(String JOINNAME, String JOINSOCNUM) {
+	public void deleteUser1(String JOINNAME, String JOINPW, String JOINSOCNUM) {
 		// TODO Auto-generated method stub
 
 	}
-
 	@Override
-	public void getInfo(UserBasicVO basic, UserDetailVO detail) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void updateUser(UserBasicVO basic, UserDetailVO detail) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void deleteUser(String JOINID, String JOINPW) {
+	public void deleteUser2(String JOINNAME, String JOINPW, String JOINSOCNUM) {
 		// TODO Auto-generated method stub
 
 	}

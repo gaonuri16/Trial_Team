@@ -30,10 +30,10 @@
                         <a class="text-light" id="topnav" href="index.html" target="_blank" rel="sponsored"><i class="fa-sm fa-fw me-2"></i>
                             HOME
                             </a>
-                            <a class="text-light" id="topnav" href="#" target="_blank"><i class="fa-sm fa-fw me-2"></i>
+                            <a class="text-light" id="topnav" href="<c:url value='/user/login' />" ><i class="fa-sm fa-fw me-2" ></i>
                             로그인
                             </a>
-                            <a class="text-light" id="topnav" href="#" target="_blank"><i class="fa-sm fa-fw me-2"></i>
+                            <a class="text-light" id="topnav" href="<c:url value='/user/joinSelect' />" ><i class="fa-sm fa-fw me-2" ></i>
                             회원가입
                         </a>
                         <a class="text-light" href="https://www.facebook.com/scourtkorea" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
@@ -90,7 +90,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item b1" href="#">로그인</a></li>
                         <li><a class="dropdown-item b1" href="#" aria-current="true">회원가입</a></li>
-                        <li><a class="dropdown-item b1" href="#">마이페이지</a></li>
+                        <li><a class="dropdown-item b1" href="<c:url value='/mypage/mypagePerson' />" >마이페이지</a></li>
                         <li><a class="dropdown-item b1" href="#">로그아웃</a></li>
                     </ul>
             </div>

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> 로그인 페이지  </title>
+    <title> 비밀번호 찾기 페이지  </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,9 +45,9 @@
 	<!-- End Script -->
 	
 	<!-- 무조건 페이지 추가  -->
-<style>
-
-/* 푸터 */
+	<style>
+	
+	/* 푸터 */
     .under-footer {
         height: 150px;
     }
@@ -61,10 +61,15 @@
         font-weight: 100 !important;
         line-height: 30px;
     }
-/* Start joinSelect.css */
-
-/* login.html의 css*/
-.title-box{
+	
+.complete-text{
+   text-align: center;
+   margin-bottom: 50px;
+   color: #676767;
+    }
+	
+	
+	.title-box{
     text-align: center;
     justify-content: center;
     margin: 0 auto 100px;
@@ -76,11 +81,11 @@
     color: rgb(132, 127, 127);
     font-weight: 500 !important;
 }
-
 .form-box{
-    max-width: 400px;
-
+    max-width: 600px;
+    min-width: 400px;
 }
+
 
 label {
     font-weight: 700 !important;
@@ -90,114 +95,104 @@ button:hover{
     cursor: pointer;
 }
 .btn-box{
-    margin-top: 70px;
-    margin-left: 33px;
-    width: 100%;
+    margin-top: 100px;
+    width: 400px;
+    padding: 0 80px;
+
+}
+.btn-box::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.Search-btn .cencel-btn{
+    text-align: center;
 }
 
-.id-btn{
+.Search-btn{
     float: left;
-    margin: 0 5px;
-    box-sizing: border-box;
+    margin-right: 50px;
 }
-.pw-btn{
+.cencel-btn{
     float: left;
-    margin: 0 5px;
-    box-sizing: border-box;
-}
-.login-btn{
-    float: left;
-    margin: 0 5px;
-    box-sizing: border-box;
-    
-}
 
+}
+/* End join.html의 css*/
 
 </style>
+
+
+	
+	
+	
 </head>
 <body>
-	<jsp:include page="../include/header.jsp" /> 
+<jsp:include page="../include/header.jsp" /> 
 
-
-<!-- Start 로그인 -->
+<!-- Start 비밀번호 찾기  -->
 <div class="container py-5">
-    <div class="row">
-        <form class="form-box m-auto" method="post" role="form" id="loginForm" action="<c:url value='/user/Login'/>"> 
+    <div class="row py-5">
+        <form class="col-md-4 m-auto form-box" id="pwSearchForm" action="<c:url value='/user/PwSearch' />" method="post" role="form">
 
-            <div class="title-box">로그인</div>
+            <div class="title-box">비밀번호 찾기</div>
 
          
             <div class="mb-3">
-                <label for="inputJoinId">아이디</label>
-                <input type="text" class="form-control mt-1" id="JOINID" name="JOINID" placeholder="아이디를 입력하세요.">
+                <label for="inputJoinName">이름</label>
+                <input type="text" class="form-control mt-1" id="joinName" name="JOINNAME" placeholder="이름을 입력하세요.">
             </div>
-            <div class="mb-3 ">
-                <label for="inputJoinPw">비밀번호</label>
-                <input type="password" class="form-control mt-1" id="JOINPW" name="JOINPW"  placeholder="비밀번호를 입력하세요.">
-            </div>
+            
+            
+                <div class="mb-3">
+                    <label for="inputname">주민등록번호</label>
+                    <input type="password" class="form-control mt-1" id="joinSocNum" name="JOINSOCNUM" placeholder="주민등록번호를 입력해주세요.">
+                </div>
+
+            
            
             <div class="btn-box">
-                <div class="id-btn">
-                    <button type="button" id="idSearch" class="btn btn-outline-secondary">아이디 찾기</button>
+                <div class="col mt-2 Search-btn">
+                    <button type="button" id="pwSearchBtn" class="btn btn-outline-secondary px-3">비밀번호 찾기</button>
                 </div>
-                <div class="pw-btn">
-                    <button type="button" id="pwSearch" class="btn btn-outline-secondary">비밀번호 찾기</button>
-                </div>
-                <div class="login-btn">
-                    <button type="button" id="loginBtn" class="btn btn-outline-secondary">로그인</button>
+                
+                <div class="col mt-2 cencel-btn">
+                    <button type="button" id="cencelBtn" class="btn btn-outline-secondary px-3">취소</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-<!-- End 로그인 -->
+<!-- End 비밀번호 찾기  -->
 
 
 <%@ include file="../include/footer1.jsp"%>
 
-
-
 </body>
 
- <script>
-    	const msg = '${msg}';
-    	if(msg === 'joinSuccess') {
-    		alert('로그인 정상 처리되었습니다.');
-    	} else if(msg === 'loginFail') {
-    		alert('로그인 실패! 아이디와 비밀번호를 확인하세요.');
-    	}
-    	
-    	//입력란이 공백인 지를 확인한 후, 공백이 아니라면 submit() 진행.
-    	//mapper에 작성한 login 메서드의 리턴 타입은 UserVO
-    	//리턴 타입에 맞게 sql문을 작성 해 주시면 되겠습니다.
-    	$(function() {
-			$('#loginBtn').click(function() {
-				if($('#JOINID').val() === '') {
-					alert('아이디를 입력해주세요.');
-					return;
-				} else if($('#JOINPW').val() === '') {
-					alert('비밀번호를 작성하세요.');
-					return;
-				} else {
-					$('#loginForm').submit();
-				}
-			});
-		});
-    	
-    	$(function() {
-    		$('#idSearch').click(function(){
-    			location.href="<c:url value='/user/idSearch'/>";
-    		})
-    	})
-    	
-    	$(function() {
-    		$('#pwSearch').click(function(){
-    			location.href="<c:url value='/user/pwSearch'/>";
-    		})
-    	})
-    	
-    	
-    	
-    	
-    </script>
+
+<script>
+
+$(function() {
+	 $('#cencelBtn').click(function(){
+	 	location.href="<c:url value='/user/login'/>";
+	 	})
+	 })
+
+
+
+$(function() {
+	$('#pwSearchBtn').click(function() {
+		if($('#joinName').val() === '') {
+			alert('이름을 입력해주세요.');
+			return history.back();
+		} else if($('#joinSocNum').val() === '') {
+			alert('주민등록번호를 입력해주세요.');
+			return history.back();
+		} else {
+			$('#pwSearchForm').submit();
+		}
+	});
+});
+
+</script>
 </html>

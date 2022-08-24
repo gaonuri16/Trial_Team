@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>인덱스를 만들어 보자</title>
+    <title>footer1 회원</title>
 	
 
 </head>
@@ -42,7 +42,7 @@
             </div>
 
             <div class="col-3 pt-5">
-                <h2 class="h2 text-light border-bottom pb-3 border-light">마이 페이지_회원</h2>
+                <h2 class="h2 text-light border-bottom pb-3 border-light">마이 페이지</h2>
                 <ul class="list-unstyled text-light footer-link-list">
                     <li><a class="text-decoration-none" href="#">조력자 신청 현황/선정여부</a></li>
                     <li><a class="text-decoration-none" href="#">나의 정보</a></li>

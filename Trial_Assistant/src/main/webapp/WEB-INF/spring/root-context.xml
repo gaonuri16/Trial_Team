@@ -67,7 +67,7 @@
 	<mybatis-spring:scan
 			base-package="com.spring.pr.answer.mapper" />
 	<mybatis-spring:scan
-		base-package="com.spring.pr.user.mapper" />
+			base-package="com.spring.pr.user.mapper" />
 	<mybatis-spring:scan
-		base-package="com.spring.pr.mypage.mapper" />
+			base-package="com.spring.pr.mypage.mapper" />
 </beans>
