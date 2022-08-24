@@ -18,9 +18,8 @@ CREATE TABLE Ins (
 	INS_ADDR_DETAIL	VARCHAR(50)	NOT NULL,
 	INS_RGSTR	DATE DEFAULT sysdate	NOT NULL,
 	INS_RLS	DATE	NULL,
-	JOINID	VARCHAR(255)	NOT NULL
-	INSSOCNUM VARCHAR2(20)
-);
+	JOIN_ID	VARCHAR(255)	NOT NULL
+	);
  */
 
 @Getter
@@ -32,13 +31,12 @@ public class InsVO {
 	
 	private int InsNum;
 	private String InsName;
-	private String InsPhone;
-	private String InsFaxNum;
+	private int InsPhone;
+	private int InsFaxNum;
 	private String InsAddr;
 	private String InsAddrDetail;
 	private Timestamp InsRgstr;
 	private Timestamp InsRls;
 	private String JoinId;
-	private String InsSocNum;
 	
 }

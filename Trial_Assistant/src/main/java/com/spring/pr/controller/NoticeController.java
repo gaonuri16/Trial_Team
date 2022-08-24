@@ -25,7 +25,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.pr.command.NoticeVO;
 import com.spring.pr.notice.service.INoticeService;
-import com.spring.pr.util.PageCreator;
+import com.spring.pr.util.PageCreater;
 import com.spring.pr.util.PageVO;
 
 @Controller
@@ -115,7 +115,7 @@ public class NoticeController {
 		model.addAttribute("noticeList", service.getList(page));
 		// 조회 결과를 notice라는 이름으로 보내줌 
 		
-		PageCreator pct = new PageCreator();
+		PageCreater pct = new PageCreater();
 		pct.setPaging(page);
 		pct.setArticleTotalCount(service.getTotal(page));
 		System.out.println("페이지 객체 확인 : " + pct.toString());

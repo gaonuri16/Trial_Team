@@ -4,22 +4,11 @@
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
-	xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:cache="http://www.springframework.org/schema/cache"
-    xmlns:aop="http://www.springframework.org/schema/aop"
-	
 	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- MultipartResolver 설정 -->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-    	<property name="defaultEncoding" value="UTF-8" />
-        <property name="maxUploadSize" value="-1" />
-        <property name="maxInMemorySize" value="-1" />
-    </bean>	
 
 	<!-- 프로젝트를 구성하다 보면 자주 변경되지 않는 설정 파일들이나 공통 정보들에 대한 
 		 내용이 존재하게 되고 그 내용은 한 번 지정되면 잘 바뀌지 않음 
@@ -66,28 +55,19 @@
 
 	</bean>
 	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8"/>
+	</bean>
 
 	<!-- mapper이름은 이렇게 지정하세요  -->
 	<mybatis-spring:scan
 		base-package="com.spring.pr.notice.mapper" />
 	<mybatis-spring:scan
-		base-package="com.spring.pr.faq.mapper" />
-	<mybatis-spring:scan
-		base-package="com.spring.pr.mypage.mapper" />
-	<mybatis-spring:scan
-		base-package="com.spring.pr.user.mapper" />
+			base-package="com.spring.pr.faq.mapper" />
 	<mybatis-spring:scan
 			base-package="com.spring.pr.answer.mapper" />
 	<mybatis-spring:scan
-			base-package="com.spring.pr.unq.mapper" />
+		base-package="com.spring.pr.user.mapper" />
 	<mybatis-spring:scan
-			base-package="com.spring.pr.suppapp.mapper" />
-	<mybatis-spring:scan
-			base-package="com.spring.pr.slctn.mapper" />
-	<mybatis-spring:scan
-			base-package="com.spring.pr.insapp.mapper" />
-	<mybatis-spring:scan
-			base-package="com.spring.pr.ins.mapper" />
-	<mybatis-spring:scan
-			base-package="com.spring.pr.app.mapper" />
+		base-package="com.spring.pr.mypage.mapper" />
 </beans>
