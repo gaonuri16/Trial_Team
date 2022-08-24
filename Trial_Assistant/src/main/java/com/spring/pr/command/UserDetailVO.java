@@ -1,10 +1,6 @@
 package com.spring.pr.command;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
@@ -47,6 +43,7 @@ public class UserDetailVO {
 	
 	public String INSNAME;
 	public String INSSOCNUM;
+	public String INSADDRNUM;
 	public String INSADDRBASIC;
 	public String INSADDRDETAIL;
 	

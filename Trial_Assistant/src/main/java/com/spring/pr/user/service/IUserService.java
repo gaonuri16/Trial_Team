@@ -1,8 +1,8 @@
 package com.spring.pr.user.service;
 
-import com.spring.pr.command.UserBasicVO;
-import com.spring.pr.command.UserDetailVO;
-import com.spring.pr.command.UserVO;
+import org.apache.ibatis.annotations.*;
+
+import com.spring.pr.command.*;
 
 
 public interface IUserService {
@@ -14,20 +14,29 @@ public interface IUserService {
 		void join(UserVO user);
 			
 		//로그인 
-		void login(String JOINID, String JOINPW);
+		UserVO login(@Param("JOINID") String JOINID, @Param("JOINPW") String JOINPW);
 		
 		//아이디 찾기 
-		void idSearch(String JOINNAME, String JOINSOCNUM);
+		UserVO idSearch(@Param("JOINNAME") String joinName, @Param("JOINSOCNUM") String joinSocNum);
 			
-		//비밀번호 재등록
-		void pwSearch(String JOINNAME, String JOINSOCNUM);
+		//비밀번호 찾기 
+		UserVO pwSearch(@Param("JOINNAME") String joinName, @Param("JOINSOCNUM") String joinSocNum);
+		//UserVO pwSearch(@Param("JOINNAME") String JOINNAME, @Param("JOINSOCNUM") String JOINSOCNUM);
+		
+		// 비밀번호 재등록 
+		void newPwRegist(UserVO user);
+		
 		
 		//회원 정보 얻어오기 
-		void getInfo(UserBasicVO basic, UserDetailVO detail);
+		UserVO getInfo(String JOINID);
 					
 		//회원 정보 수정 
-		void updateUser(UserBasicVO basic, UserDetailVO detail);
+		void updateUser(UserVO user);
 
 		//회원 정보 삭제 
-		void deleteUser(String JOINID, String JOINPW);
+		void deleteUser1(@Param("JOINSOCNUM") String JOINSOCNUM, @Param("JOINPW") String JOINPW, @Param("JOINNAME") String JOINNAME);
+		void deleteUser2(@Param("JOINSOCNUM") String JOINSOCNUM, @Param("JOINPW") String JOINPW, @Param("JOINNAME") String JOINNAME);
+		
+
+		
 }

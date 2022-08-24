@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
@@ -177,7 +177,7 @@ button:hover{
                     
                     <div class="row next-btn-box">
                         <div class="col mt-2 next-btn">
-                            <button type="btn" class="btn btn-outline-secondary btn-lg px-3" id="nextBtn">다음</button>
+                            <button type="button" class="btn btn-outline-secondary btn-lg px-3" id="nextBtn">다음</button>
                         </div>
                     </div>
                 </div>

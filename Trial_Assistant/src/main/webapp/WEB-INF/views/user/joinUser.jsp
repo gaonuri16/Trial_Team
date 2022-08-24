@@ -49,7 +49,20 @@
 
 
 <style>
+/* 푸터 */
+    .under-footer {
+        height: 150px;
+    }
 
+    .footer-box2 {
+        padding: 20px 0px;
+        position: relative;
+        left: 160px;
+        bottom: 115px;
+        font-size: 17px !important;
+        font-weight: 100 !important;
+        line-height: 30px;
+    }
 
 /* Start joinSelect.css */
 
@@ -488,22 +501,6 @@ button:hover{
 	
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </html>

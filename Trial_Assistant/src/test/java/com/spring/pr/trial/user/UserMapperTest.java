@@ -1,14 +1,14 @@
 package com.spring.pr.trial.user;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.junit.*;
+import org.junit.runner.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.test.context.*;
+import org.springframework.test.context.junit4.*;
+import org.springframework.test.context.web.*;
 
-import com.spring.pr.command.UserVO;
-import com.spring.pr.user.mapper.IUserMapper;
+import com.spring.pr.command.*;
+import com.spring.pr.user.mapper.*;
 
 
 
@@ -71,15 +71,15 @@ public class UserMapperTest {
 		System.out.println(mapper.idSearch("0이름", "i2-0").getJOINID());
 	}
 	
-	@Test
-	public void pwSearchTest() {
-		UserVO user = new UserVO();
-		user.setJOINNAME("1이름");
-		user.setJOINSOCNUM("i2-1");
-		user.setJOINPW("수정정정수정정수정");
-		
-		mapper.pwSearch(user);
-	}
+//	@Test
+//	public void pwSearchTest() {
+//		UserVO user = new UserVO();
+//		user.setJOINNAME("1이름");
+//		user.setJOINSOCNUM("i2-1");
+//		user.setJOINPW("수정정정수정정수정");
+//		
+//		mapper.pwSearch(user);
+//	}
 	
 	@Test
 	public void getinfoTest() {

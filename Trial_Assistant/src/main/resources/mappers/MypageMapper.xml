@@ -33,10 +33,12 @@
 		<result column ="JOINGEN" property = "JOINGEN"/>
 		<result column ="JOINEMAIL" property = "JOINEMAIL"/>
 		<result column ="JOINPHONE" property = "JOINPHONE"/>
+		<result column ="JOINADDRNUM" property = "JOINADDRNUM"/>
 		<result column ="JOINADDRBASIC" property = "JOINADDRBASIC"/>
 		<result column ="JOINADDRDETAIL" property = "JOINADDRDETAIL"/>
 
 		<result column ="JOINRIGHT" property = "JOINRIGHT"/>
+		<result column ="INSNAME" property = "INSNAME"/>
 		<result column ="INSSOCNUM" property = "INSSOCNUM"/>
 		<result column ="INSADDRBASIC" property = "INSADDRBASIC"/>
 		<result column ="INSADDRDETAIL" property = "INSADDRDETAIL"/>
@@ -52,8 +54,10 @@
 			D.JOINGEN,
 			D.JOINEMAIL,
 			D.JOINPHONE,
+			D.JOINADDRNUM,
 			D.JOINADDRBASIC,
 			D.JOINADDRDETAIL,
+			D.INSNAME,
 			D.INSSOCNUM,
 			D.INSADDRBASIC,
 			D.INSADDRDETAIL
@@ -65,7 +69,8 @@
 	<!-- updateInfo (my info 정보 수정 ) --> 
 	<update id="updateUser">
 		UPDATE USERDETAIL D
-		SET D.JOINADDRBASIC = #{JOINADDRBASIC},
+		SET D.JOINADDRNUM = #{JOINADDRNUM},
+			D.JOINADDRBASIC = #{JOINADDRBASIC},
            	D.JOINADDRDETAIL = #{JOINADDRDETAIL}
 		WHERE JOINSOCNUM = (
 	        SELECT JOINSOCNUM 

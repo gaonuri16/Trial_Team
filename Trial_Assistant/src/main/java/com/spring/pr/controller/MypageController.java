@@ -1,45 +1,42 @@
 package com.spring.pr.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-
-import com.spring.pr.answer.service.IAnswerService;
-import com.spring.pr.faq.service.IFaqService;
-import com.spring.pr.user.service.IUserService;
-
-
-@Controller
+//@Controller
+//@RequestMapping("/mypage")
 public class MypageController {
 	
-	@Autowired
-	private IFaqService faqService;
+
+//	@Autowired
+//	private IMypageService service;
 	
-	@Autowired
-	private IAnswerService answerService;
+//	//마이페이지 내정보 페이지로 이동 
+//	@GetMapping("/mypage/mypagePerson")
+//	public String mypagePerson() {
+//		System.out.println("/mypagePerson");
+//		return "mypage/mypagePerson";
+//	}
 	
-	@Autowired
-	private IUserService userService;
-	
+	//마이페이지 myinfo 페이지 이동 
+
 	//회원 정보 페이지 이동 
-//	@GetMapping(/)
 	
 	//회원 정보 수정 페이지 이동 
 	
 	//회원 정보 수정 처리 
 	
 	
-	//faq 연결 
-//	@GetMapping("/notice/list")
-//	public String listNotice(Model model) {
-//		System.out.println("마이페이지 : /notice/list : Get");
-//		model.addAttribute("moticeList", service.getList());
+	//faq 페이지 이동 
+//	@GetMapping("/faqans/list")
+//	public String listNotice(PageVO page, Model model) {
+//		
+//		
+//		return "faqans/faq/faq_list";
 //	}
+
 	
 	//조력자 신청 현황 페이지 이동 (신청한 공고가 리스트에 뜨게) 
 	
 	//
-	
-	
+
 	//로그아웃 
 	
 	
